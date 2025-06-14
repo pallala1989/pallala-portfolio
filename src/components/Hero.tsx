@@ -1,8 +1,34 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowDown, Star, Users, Award } from 'lucide-react';
 
 export const Hero = () => {
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  
+  const roles = ['Full stack', 'DevOps', 'Prod support', 'Design'];
+  
+  useEffect(() => {
+    const currentRole = roles[currentRoleIndex];
+    const shouldDelete = isDeleting;
+    
+    const timeout = setTimeout(() => {
+      if (!shouldDelete && displayText !== currentRole) {
+        setDisplayText(currentRole.slice(0, displayText.length + 1));
+      } else if (shouldDelete && displayText !== '') {
+        setDisplayText(currentRole.slice(0, displayText.length - 1));
+      } else if (!shouldDelete && displayText === currentRole) {
+        setTimeout(() => setIsDeleting(true), 2000);
+      } else if (shouldDelete && displayText === '') {
+        setIsDeleting(false);
+        setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
+      }
+    }, shouldDelete ? 50 : 100);
+
+    return () => clearTimeout(timeout);
+  }, [currentRoleIndex, displayText, isDeleting, roles]);
+
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: 'smooth'
@@ -32,7 +58,7 @@ export const Hero = () => {
               <div className="overflow-hidden">
                 <h1 className="text-6xl md:text-7xl font-bold leading-tight animate-slide-in-up">
                   <span className="text-white block">Hello, I'm</span>
-                  <span className="text-gradient animate-shimmer shimmer-effect block mt-2">Rajasekhar</span>
+                  <span className="text-gradient animate-shimmer shimmer-effect block mt-2 font-extrabold">Rajasekhar</span>
                 </h1>
               </div>
               
@@ -40,7 +66,16 @@ export const Hero = () => {
                 Lead Java Developer
               </h2>
               
-              <p className="text-lg text-gray-400 leading-relaxed max-w-lg animate-slide-in-up stagger-3">
+              {/* Animated Role Section */}
+              <div className="animate-slide-in-up stagger-3">
+                <span className="text-xl md:text-2xl text-blue-400 font-medium">I am into: </span>
+                <span className="text-xl md:text-2xl text-gradient-gold font-bold min-w-[120px] inline-block">
+                  {displayText}
+                  <span className="animate-pulse text-blue-400">|</span>
+                </span>
+              </div>
+              
+              <p className="text-lg text-gray-400 leading-relaxed max-w-lg animate-slide-in-up stagger-4">
                 Innovative software engineer specializing in scalable Java solutions, 
                 microservices architecture, and cloud-native applications with 12+ years of experience.
               </p>
