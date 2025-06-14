@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowDown, Code2, Star, Users, Award } from 'lucide-react';
+import { ArrowDown, Star, Users, Award } from 'lucide-react';
 
 export const Hero = () => {
   const scrollTo = (id: string) => {
@@ -80,8 +80,12 @@ export const Hero = () => {
             <div className="relative">
               {/* Main Profile Circle */}
               <div className="w-80 h-80 mx-auto rounded-full gradient-blue p-2 shadow-2xl">
-                <div className="w-full h-full rounded-full bg-white flex items-center justify-center relative overflow-hidden">
-                  <Code2 size={120} className="text-blue-600" />
+                <div className="w-full h-full rounded-full bg-white p-2 relative overflow-hidden">
+                  <img 
+                    src="https://i.postimg.cc/Vst9vkXF/raja-passphoto.png" 
+                    alt="Rajasekhar Pallala"
+                    className="w-full h-full object-cover rounded-full"
+                  />
                   
                   {/* Floating Icons */}
                   <div className="absolute top-4 right-4 p-2 bg-orange-500 rounded-full animate-bounce">
