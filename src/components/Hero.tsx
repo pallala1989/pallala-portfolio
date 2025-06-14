@@ -31,9 +31,8 @@ export const Hero = () => {
             <div className="space-y-6">
               <div className="overflow-hidden">
                 <h1 className="text-6xl md:text-7xl font-bold leading-tight animate-slide-in-up">
-                  <span className="text-white">Hello, I'm</span>
-                  <br />
-                  <span className="text-gradient animate-shimmer shimmer-effect">Rajasekhar</span>
+                  <span className="text-white block">Hello, I'm</span>
+                  <span className="text-gradient animate-shimmer shimmer-effect block mt-2">Rajasekhar</span>
                 </h1>
               </div>
               
