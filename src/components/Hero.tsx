@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowDown, Star, Users, Award } from 'lucide-react';
+
 export const Hero = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const roles = ['Full stack', 'DevOps', 'Prod support', 'Design'];
+
   useEffect(() => {
     const currentRole = roles[currentRoleIndex];
     const shouldDelete = isDeleting;
+
     const timeout = setTimeout(() => {
       if (!shouldDelete && displayText !== currentRole) {
         setDisplayText(currentRole.slice(0, displayText.length + 1));
@@ -20,14 +23,18 @@ export const Hero = () => {
         setCurrentRoleIndex(prevIndex => (prevIndex + 1) % roles.length);
       }
     }, shouldDelete ? 50 : 100);
+
     return () => clearTimeout(timeout);
   }, [currentRoleIndex, displayText, isDeleting, roles]);
+
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: 'smooth'
     });
   };
-  return <section id="home" className="min-h-screen bg-gray-900 relative overflow-hidden pt-20">
+
+  return (
+    <section id="home" className="min-h-screen bg-gray-900 relative overflow-hidden pt-20">
       {/* Enhanced Geometric Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-32 h-32 gradient-orange rounded-full opacity-20 animate-float"></div>
@@ -46,20 +53,20 @@ export const Hero = () => {
           {/* Left Content */}
           <div className="space-y-8 animate-slide-in-left">
             <div className="space-y-6">
-              {/* Beautiful new heading format */}
+              {/* Updated heading format */}
               <div className="space-y-4">
                 <div className="text-2xl md:text-3xl text-gray-300 font-light animate-slide-in-up">
-                  <span className="text-blue-400">👋</span> Welcome, I'm
+                  <span className="text-blue-400">👋</span> Hi there, I'm
                 </div>
                 <div className="relative">
                   <h1 className="text-7xl md:text-8xl font-black leading-none animate-fade-in-scale">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-orange-400 animate-shimmer font-normal text-5xl mx-[240px] my-0 px-0">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-orange-400 animate-shimmer">
                       Rajasekhar
                     </span>
                   </h1>
                   <div className="absolute -bottom-2 left-0 w-32 h-1 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full animate-slide-in-up stagger-2"></div>
                 </div>
-                <div className="text-xl md:text-2xl text-gray-300 font-medium animate-slide-in-up stagger-2">Lead Java Developer</div>
+                <div className="text-xl md:text-2xl text-gray-300 font-medium animate-slide-in-up stagger-2">Lead Full Stack Developer</div>
               </div>
               
               {/* Animated Role Section */}
@@ -140,5 +147,6 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
