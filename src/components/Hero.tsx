@@ -5,7 +5,16 @@ export const Hero = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const roles = ['Full stack', 'DevOps', 'Prod support', 'Design'];
+  const roles = [
+    'Java', 'AWS', 'OOPs', 'Kubernetes', 'String handling', 'PCF', 
+    'Exception handling', 'Jira', 'Multi-threading', 'Git', 'Collections API', 
+    'Jenkins', 'Spring', 'Docker', 'Spring Boot', 'Log4J', 'Spring Cloud', 
+    'SLF4J', 'Eureka', 'JUnit', 'Config server', 'Mockito', 'Zuul load balancer', 
+    'HTML/HTML5', 'Histrix', 'CSS/CSS3', 'Performance tuning', 'Java Script', 
+    'REST', 'J Query', 'SOAP', 'React', 'RabbitMQ', 'JSON', 'JMS', 'Windows', 
+    'Oracle', 'Linux/Unix', 'MySQL', 'Tomcat', 'PostgreSQL', 'WebSphere', 
+    'Cassandra', 'Maven', 'Teradata', 'Gradle'
+  ];
 
   useEffect(() => {
     const currentRole = roles[currentRoleIndex];
@@ -59,10 +68,8 @@ export const Hero = () => {
                   <span className="text-blue-400">👋</span> Hi there, I'm
                 </div>
                 <div className="relative">
-                  <h1 className="text-7xl md:text-8xl font-black leading-none animate-fade-in-scale">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-orange-400 animate-shimmer">
-                      Rajasekhar
-                    </span>
+                  <h1 className="text-5xl md:text-6xl font-bold leading-tight animate-fade-in-scale text-white">
+                    Rajasekhar
                   </h1>
                   <div className="absolute -bottom-2 left-0 w-32 h-1 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full animate-slide-in-up stagger-2"></div>
                 </div>
@@ -71,7 +78,7 @@ export const Hero = () => {
               
               {/* Animated Role Section */}
               <div className="animate-slide-in-up stagger-3 bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 border border-gray-700">
-                <span className="text-lg md:text-xl text-blue-400 font-medium">💡 I'm specialize in: </span>
+                <span className="text-lg md:text-xl text-blue-400 font-medium">💡 I am skilled in: </span>
                 <span className="text-lg md:text-xl text-gradient-gold font-bold min-w-[120px] inline-block">
                   {displayText}
                   <span className="animate-pulse text-blue-400">|</span>
