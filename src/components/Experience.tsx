@@ -35,52 +35,52 @@ export const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-24 bg-white relative overflow-hidden">
+    <section id="experience" className="py-24 bg-gray-800 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-10 left-10 w-32 h-32 gradient-orange rounded-full opacity-5 animate-float"></div>
-        <div className="absolute bottom-10 right-10 w-40 h-40 gradient-blue rounded-full opacity-5 animate-pulse-custom"></div>
+        <div className="absolute top-10 left-10 w-32 h-32 gradient-orange rounded-full opacity-10 animate-float"></div>
+        <div className="absolute bottom-10 right-10 w-40 h-40 gradient-blue rounded-full opacity-10 animate-pulse-custom"></div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+        <div className="text-center mb-16 animate-slide-in-up">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
             Professional <span className="text-gradient">Experience</span>
           </h2>
         </div>
 
         <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 to-purple-500 transform md:-translate-x-1/2 rounded-full"></div>
+          {/* Enhanced Timeline Line */}
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 to-purple-500 transform md:-translate-x-1/2 rounded-full animate-glow"></div>
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
               <div key={index} className={`flex flex-col md:flex-row items-start md:items-center ${
                 index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-              }`}>
-                {/* Timeline Dot */}
-                <div className={`absolute left-4 md:left-1/2 w-6 h-6 ${exp.color} rounded-full transform md:-translate-x-1/2 z-10 border-4 border-white shadow-lg`}></div>
+              } animate-fade-in-scale stagger-${index + 1}`}>
+                {/* Enhanced Timeline Dot */}
+                <div className={`absolute left-4 md:left-1/2 w-6 h-6 ${exp.color} rounded-full transform md:-translate-x-1/2 z-10 border-4 border-gray-800 shadow-2xl animate-pulse-custom`}></div>
 
                 {/* Content */}
                 <div className={`ml-12 md:ml-0 md:w-1/2 ${
                   index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'
                 }`}>
-                  <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                  <div className="glass-card p-8 rounded-2xl shadow-2xl border border-gray-700 hover-lift">
                     <div className="flex items-center space-x-3 mb-4">
-                      <div className={`p-2 ${exp.color} rounded-lg`}>
+                      <div className={`p-2 ${exp.color} rounded-lg animate-glow`}>
                         <Briefcase className="text-white" size={20} />
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900">{exp.title}</h3>
+                      <h3 className="text-xl font-bold text-white">{exp.title}</h3>
                     </div>
                     
-                    <h4 className="text-blue-600 font-semibold mb-3">{exp.company}</h4>
+                    <h4 className="text-blue-400 font-semibold mb-3">{exp.company}</h4>
                     
                     <div className="flex items-center space-x-2 mb-4">
                       <Calendar className="text-gray-400" size={16} />
-                      <span className="text-gray-500 text-sm">{exp.period}</span>
+                      <span className="text-gray-400 text-sm">{exp.period}</span>
                     </div>
                     
-                    <p className="text-gray-600 leading-relaxed">{exp.description}</p>
+                    <p className="text-gray-300 leading-relaxed">{exp.description}</p>
                   </div>
                 </div>
               </div>

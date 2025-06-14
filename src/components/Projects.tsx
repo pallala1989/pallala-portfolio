@@ -39,38 +39,38 @@ export const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-gray-50 relative overflow-hidden">
+    <section id="projects" className="py-24 bg-gray-800 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 right-10 w-36 h-36 gradient-green rounded-full opacity-5 animate-float"></div>
-        <div className="absolute bottom-20 left-10 w-28 h-28 gradient-purple rounded-full opacity-5 animate-pulse-custom"></div>
+        <div className="absolute top-20 right-10 w-36 h-36 gradient-green rounded-full opacity-10 animate-float"></div>
+        <div className="absolute bottom-20 left-10 w-28 h-28 gradient-purple rounded-full opacity-10 animate-pulse-custom"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+        <div className="text-center mb-16 animate-slide-in-up">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
             Featured <span className="text-gradient">Projects</span>
           </h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <div key={index} className={`glass-card rounded-2xl overflow-hidden shadow-2xl border border-gray-700 hover-lift animate-fade-in-scale stagger-${index + 1}`}>
               <div className="p-8">
                 <div className="flex items-center justify-between mb-6">
-                  <div className={`p-4 ${project.color} rounded-xl`}>
+                  <div className={`p-4 ${project.color} rounded-xl animate-glow`}>
                     {project.icon}
                   </div>
-                  <ExternalLink className="text-gray-400 hover:text-blue-600 cursor-pointer transition-colors" size={20} />
+                  <ExternalLink className="text-gray-400 hover:text-blue-400 cursor-pointer transition-colors hover-lift" size={20} />
                 </div>
                 
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{project.title}</h3>
-                <p className="text-blue-600 text-sm font-medium mb-4">{project.company}</p>
-                <p className="text-gray-600 mb-6 leading-relaxed">{project.description}</p>
+                <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
+                <p className="text-blue-400 text-sm font-medium mb-4">{project.company}</p>
+                <p className="text-gray-300 mb-6 leading-relaxed">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
-                    <span key={techIndex} className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full border">
+                    <span key={techIndex} className="px-3 py-1 glass-effect text-gray-300 text-sm rounded-full border border-gray-600 hover:border-blue-400 transition-colors">
                       {tech}
                     </span>
                   ))}
