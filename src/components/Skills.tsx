@@ -6,63 +6,60 @@ export const Skills = () => {
     {
       category: "Programming Languages",
       skills: ["Java", "JavaScript", "Python", "SQL"],
-      color: "cyan"
+      color: "gradient-blue"
     },
     {
       category: "Frameworks & Libraries", 
       skills: ["Spring Boot", "React", "Hibernate", "Apache Camel"],
-      color: "blue"
+      color: "gradient-orange"
     },
     {
       category: "Cloud & DevOps",
       skills: ["AWS", "PCF", "Kubernetes", "Docker", "Jenkins"],
-      color: "indigo"
+      color: "gradient-green"
     },
     {
       category: "Databases",
       skills: ["PostgreSQL", "Cassandra", "MongoDB", "Oracle"],
-      color: "purple"
+      color: "gradient-purple"
     },
     {
       category: "Monitoring & Tools",
       skills: ["Dynatrace", "Splunk", "JIRA", "Git", "Maven", "Gradle"],
-      color: "pink"
+      color: "gradient-blue"
     },
     {
       category: "Architecture & Patterns",
       skills: ["Microservices", "REST", "SOAP", "MVC", "Performance Tuning"],
-      color: "green"
+      color: "gradient-orange"
     }
   ];
 
-  const getColorClasses = (color: string) => {
-    const colorMap: { [key: string]: string } = {
-      cyan: "border-cyan-400 text-cyan-400 bg-cyan-400/10",
-      blue: "border-blue-400 text-blue-400 bg-blue-400/10", 
-      indigo: "border-indigo-400 text-indigo-400 bg-indigo-400/10",
-      purple: "border-purple-400 text-purple-400 bg-purple-400/10",
-      pink: "border-pink-400 text-pink-400 bg-pink-400/10",
-      green: "border-green-400 text-green-400 bg-green-400/10"
-    };
-    return colorMap[color] || colorMap.cyan;
-  };
-
   return (
-    <section id="skills" className="py-20 bg-gray-900">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center mb-16 text-white">
-          Technical <span className="text-cyan-400">Skills</span>
-        </h2>
+    <section id="skills" className="py-24 bg-gray-50 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-36 h-36 gradient-purple rounded-full opacity-5 animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-32 h-32 gradient-green rounded-full opacity-5 animate-pulse-custom"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+            Technical <span className="text-gradient">Skills</span>
+          </h2>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
-            <div key={index} className="bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-cyan-400 transition-all duration-300">
-              <h3 className="text-xl font-semibold text-white mb-4">{category.category}</h3>
+            <div key={index} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className={`w-12 h-12 ${category.color} rounded-xl mb-6`}></div>
+              <h3 className="text-xl font-bold text-gray-900 mb-6">{category.category}</h3>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, skillIndex) => (
                   <span 
                     key={skillIndex} 
-                    className={`px-3 py-1 text-sm rounded-full border transition-all duration-200 hover:scale-105 ${getColorClasses(category.color)}`}
+                    className="px-3 py-1 text-sm rounded-full bg-gray-100 text-gray-700 border hover:bg-blue-50 hover:text-blue-600 transition-all duration-200"
                   >
                     {skill}
                   </span>
