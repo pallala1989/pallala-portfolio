@@ -1,25 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowDown, Star, Users, Award } from 'lucide-react';
-
 export const Hero = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const roles = [
-    'Java', 'AWS', 'OOPs', 'Kubernetes', 'String handling', 'PCF', 
-    'Exception handling', 'Jira', 'Multi-threading', 'Git', 'Collections API', 
-    'Jenkins', 'Spring', 'Docker', 'Spring Boot', 'Log4J', 'Spring Cloud', 
-    'SLF4J', 'Eureka', 'JUnit', 'Config server', 'Mockito', 'Zuul load balancer', 
-    'HTML/HTML5', 'Histrix', 'CSS/CSS3', 'Performance tuning', 'Java Script', 
-    'REST', 'J Query', 'SOAP', 'React', 'RabbitMQ', 'JSON', 'JMS', 'Windows', 
-    'Oracle', 'Linux/Unix', 'MySQL', 'Tomcat', 'PostgreSQL', 'WebSphere', 
-    'Cassandra', 'Maven', 'Teradata', 'Gradle'
-  ];
-
+  const roles = ['Java', 'AWS', 'OOPs', 'Kubernetes', 'String handling', 'PCF', 'Exception handling', 'Jira', 'Multi-threading', 'Git', 'Collections API', 'Jenkins', 'Spring', 'Docker', 'Spring Boot', 'Log4J', 'Spring Cloud', 'SLF4J', 'Eureka', 'JUnit', 'Config server', 'Mockito', 'Zuul load balancer', 'HTML/HTML5', 'Histrix', 'CSS/CSS3', 'Performance tuning', 'Java Script', 'REST', 'J Query', 'SOAP', 'React', 'RabbitMQ', 'JSON', 'JMS', 'Windows', 'Oracle', 'Linux/Unix', 'MySQL', 'Tomcat', 'PostgreSQL', 'WebSphere', 'Cassandra', 'Maven', 'Teradata', 'Gradle'];
   useEffect(() => {
     const currentRole = roles[currentRoleIndex];
     const shouldDelete = isDeleting;
-
     const timeout = setTimeout(() => {
       if (!shouldDelete && displayText !== currentRole) {
         setDisplayText(currentRole.slice(0, displayText.length + 1));
@@ -32,18 +20,14 @@ export const Hero = () => {
         setCurrentRoleIndex(prevIndex => (prevIndex + 1) % roles.length);
       }
     }, shouldDelete ? 50 : 100);
-
     return () => clearTimeout(timeout);
   }, [currentRoleIndex, displayText, isDeleting, roles]);
-
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: 'smooth'
     });
   };
-
-  return (
-    <section id="home" className="min-h-screen bg-gray-900 relative overflow-hidden pt-20">
+  return <section id="home" className="min-h-screen bg-gray-900 relative overflow-hidden pt-20">
       {/* Enhanced Geometric Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-32 h-32 gradient-orange rounded-full opacity-20 animate-float"></div>
@@ -71,7 +55,7 @@ export const Hero = () => {
                   <h1 className="text-5xl md:text-6xl font-bold leading-tight animate-fade-in-scale text-white">
                     Rajasekhar
                   </h1>
-                  <div className="absolute -bottom-2 left-0 w-32 h-1 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full animate-slide-in-up stagger-2"></div>
+                  <div className="absolute -bottom-2 left-0 w-32 h-1 bg-gradient-to-r from-blue-400 to-purple-500 animate-slide-in-up stagger-2 rounded-full bg-green-700"></div>
                 </div>
                 <div className="text-xl md:text-2xl text-gray-300 font-medium animate-slide-in-up stagger-2">Lead Full Stack Developer</div>
               </div>
@@ -98,11 +82,11 @@ export const Hero = () => {
                 <div className="text-sm text-gray-400">Years Experience</div>
               </div>
               <div className="text-center glass-card p-4 rounded-xl hover-lift animate-fade-in-scale stagger-5">
-                <div className="text-3xl font-bold text-green-400">50+</div>
+                <div className="text-3xl font-bold text-green-400">5+</div>
                 <div className="text-sm text-gray-400">Projects</div>
               </div>
               <div className="text-center glass-card p-4 rounded-xl hover-lift animate-fade-in-scale stagger-6">
-                <div className="text-3xl font-bold text-purple-400">5</div>
+                <div className="text-3xl font-bold text-purple-400">15+</div>
                 <div className="text-sm text-gray-400">Technologies</div>
               </div>
             </div>
@@ -154,6 +138,5 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
