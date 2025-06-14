@@ -58,7 +58,7 @@ export const Hero = () => {
               <div className="overflow-hidden">
                 <h1 className="text-6xl md:text-7xl font-bold leading-tight animate-slide-in-up">
                   <span className="text-white block">Hello, I'm</span>
-                  <span className="text-gradient animate-shimmer shimmer-effect block mt-2 font-extrabold">Rajasekhar</span>
+                  <span className="text-gradient block mt-2 font-extrabold animate-fade-in-scale">Rajasekhar</span>
                 </h1>
               </div>
               
