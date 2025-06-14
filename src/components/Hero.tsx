@@ -1,18 +1,13 @@
-
 import React, { useState, useEffect } from 'react';
 import { ArrowDown, Star, Users, Award } from 'lucide-react';
-
 export const Hero = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  
   const roles = ['Full stack', 'DevOps', 'Prod support', 'Design'];
-  
   useEffect(() => {
     const currentRole = roles[currentRoleIndex];
     const shouldDelete = isDeleting;
-    
     const timeout = setTimeout(() => {
       if (!shouldDelete && displayText !== currentRole) {
         setDisplayText(currentRole.slice(0, displayText.length + 1));
@@ -22,21 +17,17 @@ export const Hero = () => {
         setTimeout(() => setIsDeleting(true), 2000);
       } else if (shouldDelete && displayText === '') {
         setIsDeleting(false);
-        setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
+        setCurrentRoleIndex(prevIndex => (prevIndex + 1) % roles.length);
       }
     }, shouldDelete ? 50 : 100);
-
     return () => clearTimeout(timeout);
   }, [currentRoleIndex, displayText, isDeleting, roles]);
-
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: 'smooth'
     });
   };
-
-  return (
-    <section id="home" className="min-h-screen bg-gray-900 relative overflow-hidden pt-20">
+  return <section id="home" className="min-h-screen bg-gray-900 relative overflow-hidden pt-20">
       {/* Enhanced Geometric Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-32 h-32 gradient-orange rounded-full opacity-20 animate-float"></div>
@@ -62,20 +53,18 @@ export const Hero = () => {
                 </div>
                 <div className="relative">
                   <h1 className="text-7xl md:text-8xl font-black leading-none animate-fade-in-scale">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-orange-400 animate-shimmer">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-orange-400 animate-shimmer font-normal text-5xl mx-[240px] my-0 px-0">
                       Rajasekhar
                     </span>
                   </h1>
                   <div className="absolute -bottom-2 left-0 w-32 h-1 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full animate-slide-in-up stagger-2"></div>
                 </div>
-                <div className="text-xl md:text-2xl text-gray-300 font-medium animate-slide-in-up stagger-2">
-                  🚀 Lead Java Developer
-                </div>
+                <div className="text-xl md:text-2xl text-gray-300 font-medium animate-slide-in-up stagger-2">Lead Java Developer</div>
               </div>
               
               {/* Animated Role Section */}
               <div className="animate-slide-in-up stagger-3 bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 border border-gray-700">
-                <span className="text-lg md:text-xl text-blue-400 font-medium">💡 I specialize in: </span>
+                <span className="text-lg md:text-xl text-blue-400 font-medium">💡 I'm specialize in: </span>
                 <span className="text-lg md:text-xl text-gradient-gold font-bold min-w-[120px] inline-block">
                   {displayText}
                   <span className="animate-pulse text-blue-400">|</span>
@@ -106,16 +95,10 @@ export const Hero = () => {
 
             {/* Enhanced Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 animate-slide-in-up stagger-4">
-              <button 
-                onClick={() => scrollTo('projects')} 
-                className="px-8 py-4 gradient-blue text-white rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 font-medium hover-glow"
-              >
+              <button onClick={() => scrollTo('projects')} className="px-8 py-4 gradient-blue text-white rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 font-medium hover-glow">
                 View My Work
               </button>
-              <button 
-                onClick={() => scrollTo('contact')} 
-                className="px-8 py-4 border-2 border-blue-400 text-blue-400 rounded-lg hover:bg-blue-400 hover:text-white transition-all duration-300 font-medium glass-effect"
-              >
+              <button onClick={() => scrollTo('contact')} className="px-8 py-4 border-2 border-blue-400 text-blue-400 rounded-lg hover:bg-blue-400 hover:text-white transition-all duration-300 font-medium glass-effect">
                 Get In Touch
               </button>
             </div>
@@ -127,11 +110,7 @@ export const Hero = () => {
               {/* Main Profile Circle with enhanced glow */}
               <div className="w-80 h-80 mx-auto rounded-full gradient-blue p-2 shadow-2xl animate-glow">
                 <div className="w-full h-full rounded-full bg-gray-800 p-2 relative overflow-hidden glass-card">
-                  <img 
-                    src="https://i.postimg.cc/Vst9vkXF/raja-passphoto.png" 
-                    alt="Rajasekhar Pallala" 
-                    className="w-full h-full object-cover rounded-full" 
-                  />
+                  <img src="https://i.postimg.cc/Vst9vkXF/raja-passphoto.png" alt="Rajasekhar Pallala" className="w-full h-full object-cover rounded-full" />
                   
                   {/* Enhanced Floating Icons */}
                   <div className="absolute top-4 right-4 p-2 bg-orange-500 rounded-full animate-float shadow-lg">
@@ -161,6 +140,5 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
