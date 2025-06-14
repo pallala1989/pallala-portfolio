@@ -55,21 +55,28 @@ export const Hero = () => {
           {/* Left Content */}
           <div className="space-y-8 animate-slide-in-left">
             <div className="space-y-6">
-              <div className="overflow-hidden">
-                <h1 className="text-6xl md:text-7xl font-bold leading-tight animate-slide-in-up">
-                  <span className="text-white block">Hello, I'm</span>
-                  <span className="text-gradient block mt-2 font-extrabold animate-fade-in-scale">Rajasekhar</span>
-                </h1>
+              {/* Beautiful new heading format */}
+              <div className="space-y-4">
+                <div className="text-2xl md:text-3xl text-gray-300 font-light animate-slide-in-up">
+                  <span className="text-blue-400">👋</span> Welcome, I'm
+                </div>
+                <div className="relative">
+                  <h1 className="text-7xl md:text-8xl font-black leading-none animate-fade-in-scale">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-orange-400 animate-shimmer">
+                      Rajasekhar
+                    </span>
+                  </h1>
+                  <div className="absolute -bottom-2 left-0 w-32 h-1 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full animate-slide-in-up stagger-2"></div>
+                </div>
+                <div className="text-xl md:text-2xl text-gray-300 font-medium animate-slide-in-up stagger-2">
+                  🚀 Lead Java Developer
+                </div>
               </div>
               
-              <h2 className="text-2xl md:text-3xl text-gray-300 font-light animate-slide-in-up stagger-2">
-                Lead Java Developer
-              </h2>
-              
               {/* Animated Role Section */}
-              <div className="animate-slide-in-up stagger-3">
-                <span className="text-xl md:text-2xl text-blue-400 font-medium">I am into: </span>
-                <span className="text-xl md:text-2xl text-gradient-gold font-bold min-w-[120px] inline-block">
+              <div className="animate-slide-in-up stagger-3 bg-gray-800/50 backdrop-blur-sm rounded-xl p-4 border border-gray-700">
+                <span className="text-lg md:text-xl text-blue-400 font-medium">💡 I specialize in: </span>
+                <span className="text-lg md:text-xl text-gradient-gold font-bold min-w-[120px] inline-block">
                   {displayText}
                   <span className="animate-pulse text-blue-400">|</span>
                 </span>
