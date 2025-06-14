@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Linkedin, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +9,7 @@ export const Contact = () => {
     email: '',
     message: ''
   });
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -18,13 +19,43 @@ export const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
-    setFormData({ name: '', email: '', message: '' });
+    setIsLoading(true);
+
+    try {
+      // Initialize EmailJS with your public key
+      emailjs.init('UmpeYlneD0XdC7d7D');
+
+      // Send email using EmailJS
+      await emailjs.send(
+        'service_e4fqv58', // your service ID
+        'template_bvdipdh', // your template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Rajasekhar', // your name
+        }
+      );
+
+      toast({
+        title: "Message Sent Successfully! 🎉",
+        description: "Thank you for your message. I'll get back to you soon!",
+      });
+      
+      // Reset form
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        title: "Failed to Send Message ❌",
+        description: "Something went wrong. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const contactInfo = [
@@ -119,7 +150,8 @@ export const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all"
+                  disabled={isLoading}
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all disabled:opacity-50"
                   placeholder="Your Name"
                 />
               </div>
@@ -133,7 +165,8 @@ export const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all"
+                  disabled={isLoading}
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all disabled:opacity-50"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -146,18 +179,20 @@ export const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  disabled={isLoading}
                   rows={5}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all resize-none"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all resize-none disabled:opacity-50"
                   placeholder="Your message..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full px-6 py-3 gradient-blue text-white rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 font-medium hover-glow animate-slide-in-up stagger-4"
+                disabled={isLoading}
+                className="w-full px-6 py-3 gradient-blue text-white rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 font-medium hover-glow animate-slide-in-up stagger-4 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
-                <Send size={20} />
-                <span>Send Message</span>
+                <Send size={20} className={isLoading ? 'animate-spin' : ''} />
+                <span>{isLoading ? 'Sending...' : 'Send Message'}</span>
               </button>
             </form>
           </div>
