@@ -1,35 +1,71 @@
 
 import React from 'react';
-import { Briefcase, Calendar } from 'lucide-react';
+import { Briefcase, Calendar, MapPin } from 'lucide-react';
 
 export const Experience = () => {
   const experiences = [
     {
       title: "Lead Consultant",
       company: "DE",
+      location: "Multiple Projects",
       period: "Oct 2021 – Present",
-      description: "Lead engineer on credit card management systems, handling deployments, monitoring, and operational tasks using PCF, Kubernetes, Dynatrace, and Splunk.",
+      description: "Leading Java engineering initiatives for credit card products including CAM (Card Account Management), Card authorizations, Financial transactions, Lending, and Pricing. Specializing in production issue resolution, application monitoring with Dynatrace and Splunk, and managing PCF/Kubernetes deployments.",
+      highlights: [
+        "Production issue resolution and RCA documentation",
+        "Dynatrace and Splunk monitoring expertise", 
+        "PCF and Kubernetes operations (restart, restage, scaling)",
+        "Control-M job management and automation",
+        "SR/DR flip events and change management",
+        "Custom PCF services creation (DB, GSLB, User services)"
+      ],
       color: "gradient-blue"
     },
     {
       title: "Full Stack Java Developer", 
-      company: "GlaceEMR, Chennai",
+      company: "GlaceEMR",
+      location: "Chennai, IN",
       period: "Sep 2020 – Sep 2021",
-      description: "Built and maintained EMR systems with Spring, JDBC, Jaspersoft, and MVC architecture.",
+      description: "Developed comprehensive ONC certified electronic medical records software with integrated patient portal, e-RX, lab interfaces, and HIPAA-compliant solutions. Implemented MVC architecture using Spring framework and generated reports with Jaspersoft.",
+      highlights: [
+        "ONC certified EMR platform development",
+        "Spring MVC architecture implementation",
+        "JDBC database integration and DAO layer",
+        "TibcoJaspersoft report generation",
+        "HIPAA compliance and data security",
+        "Agile development with daily standups"
+      ],
       color: "gradient-orange"
     },
     {
       title: "Senior Java Developer",
-      company: "BNP Paribas, Chennai", 
+      company: "BNP Paribas", 
+      location: "Chennai, IN",
       period: "Aug 2019 – Aug 2020",
-      description: "Developed and deployed microservices with Java, Spring Boot, Docker, and Jenkins.",
+      description: "Developed microservices for ACETP fund transfer systems using Java, Spring Boot, and Apache Camel. Managed Docker deployments, Jenkins CI/CD, and provided 24/7 production support for custody, clearing, and settlement operations.",
+      highlights: [
+        "Microservices development (Java, Spring Boot, Apache Camel)",
+        "Docker containerization and deployment",
+        "Jenkins CI/CD pipeline management",
+        "24/7 production support and monitoring",
+        "Cross-team collaboration (Custody, Simulation, Exec)",
+        "Agile Scrum methodology"
+      ],
       color: "gradient-green"
     },
     {
       title: "IT Application Engineer",
-      company: "EIP, Mumbai",
-      period: "Aug 2012 – Aug 2019", 
-      description: "Developed EIP billing systems with Core Java, Hibernate, and REST/SOAP integration.",
+      company: "Equipment Installment Plan (EIP)",
+      location: "Mumbai, IN", 
+      period: "Aug 2012 – Aug 2019",
+      description: "Led analysis, design, and development of EIP billing applications for zero-interest mobile equipment financing. Implemented Core Java solutions with Hibernate, Spring MVC, and integrated external systems via REST/SOAP web services.",
+      highlights: [
+        "Full SDLC participation and workflow design",
+        "Spring MVC and Hibernate ORM implementation",
+        "REST and SOAP web services integration",
+        "WebLogic deployment and build scripts",
+        "Production monitoring and issue resolution",
+        "Code review and quality assurance"
+      ],
       color: "gradient-purple"
     }
   ];
@@ -45,8 +81,11 @@ export const Experience = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16 animate-slide-in-up">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-            Professional <span className="text-gradient">Experience</span>
+            Professional <span className="text-gradient">Journey</span>
           </h2>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            12+ years of enterprise software development and technical leadership
+          </p>
         </div>
 
         <div className="relative">
@@ -73,14 +112,32 @@ export const Experience = () => {
                       <h3 className="text-xl font-bold text-white">{exp.title}</h3>
                     </div>
                     
-                    <h4 className="text-blue-400 font-semibold mb-3">{exp.company}</h4>
+                    <h4 className="text-blue-400 font-semibold mb-2">{exp.company}</h4>
                     
-                    <div className="flex items-center space-x-2 mb-4">
-                      <Calendar className="text-gray-400" size={16} />
-                      <span className="text-gray-400 text-sm">{exp.period}</span>
+                    <div className="flex items-center space-x-4 mb-4 text-sm text-gray-400">
+                      <div className="flex items-center space-x-1">
+                        <Calendar size={14} />
+                        <span>{exp.period}</span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <MapPin size={14} />
+                        <span>{exp.location}</span>
+                      </div>
                     </div>
                     
-                    <p className="text-gray-300 leading-relaxed">{exp.description}</p>
+                    <p className="text-gray-300 leading-relaxed mb-4">{exp.description}</p>
+                    
+                    <div className="space-y-2">
+                      <h5 className="text-sm font-semibold text-blue-400 mb-2">Key Achievements:</h5>
+                      <ul className="space-y-1">
+                        {exp.highlights.map((highlight, hIndex) => (
+                          <li key={hIndex} className="flex items-start space-x-2 text-sm text-gray-300">
+                            <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                            <span>{highlight}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>

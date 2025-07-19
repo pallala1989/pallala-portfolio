@@ -1,36 +1,50 @@
 
 import React from 'react';
-import { Code, Cloud, Activity, Users } from 'lucide-react';
+import { Code, Cloud, Activity, Users, Database, Settings } from 'lucide-react';
 
 export const Services = () => {
   const services = [
     {
       icon: <Code className="text-white" size={48} />,
-      title: "Lead Java Development",
-      description: "End-to-end architecture, performance optimization, and cross-functional coordination for enterprise applications.",
-      features: ["Microservices Architecture", "Performance Tuning", "Code Review & Mentoring", "Agile Development"],
+      title: "Enterprise Java Development",
+      description: "Lead full-stack Java development with Spring Boot, microservices architecture, and performance optimization for large-scale enterprise applications.",
+      features: ["Microservices Architecture", "Spring Boot & Cloud", "Performance Tuning", "Code Review & Mentoring"],
       color: "gradient-blue"
     },
     {
       icon: <Cloud className="text-white" size={48} />,
-      title: "Cloud Integration & Deployment", 
-      description: "Expertise in PCF, Kubernetes, Jenkins CI/CD pipelines, and cloud operations for scalable solutions.",
-      features: ["PCF & Kubernetes", "CI/CD Pipelines", "Docker Containerization", "Cloud Migration"],
+      title: "Cloud Operations & DevOps", 
+      description: "Expert in AWS, PCF, Kubernetes operations, CI/CD pipelines with Jenkins, and container orchestration for scalable cloud solutions.",
+      features: ["AWS Solutions Architecture", "PCF & Kubernetes", "Jenkins CI/CD", "Docker Containerization"],
       color: "gradient-orange"
     },
     {
       icon: <Activity className="text-white" size={48} />,
-      title: "Monitoring & Reliability Engineering",
-      description: "Dynatrace, Splunk, and Control-M job orchestration for robust application monitoring and reliability.",
-      features: ["Application Monitoring", "Performance Analytics", "Issue Resolution", "System Reliability"],
+      title: "SRE & Application Monitoring",
+      description: "Comprehensive site reliability engineering with Dynatrace, Splunk monitoring, Control-M automation, and 24/7 production support.",
+      features: ["Dynatrace & Splunk Expertise", "Production Issue Resolution", "Control-M Job Management", "Performance Analytics"],
       color: "gradient-green"
     },
     {
       icon: <Users className="text-white" size={48} />,
       title: "Technical Leadership",
-      description: "Leading cross-functional teams and driving innovative solutions in fast-paced, high-performance environments.",
-      features: ["Team Leadership", "Project Management", "Technical Strategy", "Stakeholder Communication"],
+      description: "Leading cross-functional teams, mentoring developers, driving agile methodologies, and managing complex enterprise projects.",
+      features: ["Team Leadership", "Agile Scrum Management", "Technical Strategy", "Cross-team Collaboration"],
       color: "gradient-purple"
+    },
+    {
+      icon: <Database className="text-white" size={48} />,
+      title: "Database & Integration",
+      description: "Expert database design with PostgreSQL, Oracle, MySQL, and seamless system integration using REST/SOAP APIs and messaging.",
+      features: ["Database Architecture", "REST/SOAP Integration", "JMS & RabbitMQ", "Data Migration"],
+      color: "gradient-blue"
+    },
+    {
+      icon: <Settings className="text-white" size={48} />,
+      title: "System Architecture & Design",
+      description: "Designing scalable system architectures, implementing design patterns, and ensuring high availability for mission-critical applications.",
+      features: ["System Design", "High Availability", "Scalability Planning", "Architecture Review"],
+      color: "gradient-orange"
     }
   ];
 
@@ -45,14 +59,14 @@ export const Services = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16 animate-slide-in-up">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-            What I <span className="text-gradient">Offer</span>
+            Core <span className="text-gradient">Competencies</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Comprehensive solutions for your enterprise development needs
+            Comprehensive enterprise solutions and technical leadership across the full technology stack
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div key={index} className={`glass-card rounded-2xl p-8 shadow-2xl border border-gray-700 hover-lift animate-fade-in-scale stagger-${index + 1}`}>
               <div className={`w-20 h-20 ${service.color} rounded-2xl flex items-center justify-center mb-6 animate-glow`}>

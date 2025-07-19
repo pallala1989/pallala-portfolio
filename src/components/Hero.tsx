@@ -6,7 +6,7 @@ export const Hero = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const roles = ['Java', 'AWS', 'OOPs', 'Kubernetes', 'String handling', 'PCF', 'Exception handling', 'Jira', 'Multi-threading', 'Git', 'Collections API', 'Jenkins', 'Spring', 'Docker', 'Spring Boot', 'Log4J', 'Spring Cloud', 'SLF4J', 'Eureka', 'JUnit', 'Config server', 'Mockito', 'Zuul load balancer', 'HTML/HTML5', 'Histrix', 'CSS/CSS3', 'Performance tuning', 'Java Script', 'REST', 'J Query', 'SOAP', 'React', 'RabbitMQ', 'JSON', 'JMS', 'Windows', 'Oracle', 'Linux/Unix', 'MySQL', 'Tomcat', 'PostgreSQL', 'WebSphere', 'Cassandra', 'Maven', 'Teradata', 'Gradle'];
+  const roles = ['Java Development', 'AWS Solutions', 'Microservices', 'Kubernetes', 'PCF Operations', 'Spring Boot', 'DevOps', 'Leadership', 'Performance Tuning', 'React Development', 'Docker', 'Jenkins CI/CD', 'SRE Activities', 'Agile Methodologies'];
 
   useEffect(() => {
     const currentRole = roles[currentRoleIndex];
@@ -88,20 +88,21 @@ export const Hero = () => {
               {/* Updated heading format */}
               <div className="space-y-3 sm:space-y-4">
                 <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 font-light animate-slide-in-up">
-                  <span className="text-blue-400">👋</span> Hi there, I'm
+                  <span className="text-blue-400">👋</span> Hi, I'm
                 </div>
                 <div className="relative">
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in-scale text-white">
-                    Rajasekhar
+                    Rajasekhar Pallala
                   </h1>
                   <div className="absolute -bottom-1 sm:-bottom-2 left-1/2 lg:left-0 transform -translate-x-1/2 lg:translate-x-0 w-24 sm:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-blue-400 to-purple-500 animate-slide-in-up stagger-2 rounded-full bg-green-700"></div>
                 </div>
-                <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-medium animate-slide-in-up stagger-2">Lead Full Stack Developer</div>
+                <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 font-medium animate-slide-in-up stagger-2">Lead Consultant & Java Engineer</div>
+                <div className="text-sm sm:text-base text-blue-400 animate-slide-in-up stagger-3">📍 Wilmington, DE | 📧 pallala1989@gmail.com | 📱 903-921-0271</div>
               </div>
               
               {/* Animated Role Section */}
               <div className="animate-slide-in-up stagger-3 bg-gray-800/50 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-gray-700 mx-auto lg:mx-0 max-w-md lg:max-w-none">
-                <div className="text-sm sm:text-base lg:text-lg xl:text-xl text-blue-400 font-medium mb-2">💡 I am skilled in:</div>
+                <div className="text-sm sm:text-base lg:text-lg xl:text-xl text-blue-400 font-medium mb-2">💡 Specializing in:</div>
                 <div className="text-sm sm:text-base lg:text-lg xl:text-xl text-gradient-gold font-bold min-w-[120px]">
                   {displayText}
                   <span className="animate-pulse text-blue-400">|</span>
@@ -109,8 +110,9 @@ export const Hero = () => {
               </div>
               
               <p className="text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed max-w-lg mx-auto lg:mx-0 animate-slide-in-up stagger-4">
-                Innovative software engineer specializing in scalable Java solutions, 
-                microservices architecture, and cloud-native applications with 12+ years of experience.
+                Dynamic Lead Consultant excelling in Java development and microservices. 
+                Proven ability in performance tuning, agile methodologies, and cloud-native solutions. 
+                Passionate about delivering innovative enterprise solutions.
               </p>
             </div>
 
@@ -121,22 +123,22 @@ export const Hero = () => {
                 <div className="text-xs sm:text-sm text-gray-400">Years Experience</div>
               </div>
               <div className="text-center glass-card p-3 sm:p-4 rounded-xl hover-lift animate-fade-in-scale stagger-5">
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-green-400">5+</div>
-                <div className="text-xs sm:text-sm text-gray-400">Projects</div>
+                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-green-400">Enterprise</div>
+                <div className="text-xs sm:text-sm text-gray-400">Solutions</div>
               </div>
               <div className="text-center glass-card p-3 sm:p-4 rounded-xl hover-lift animate-fade-in-scale stagger-6">
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-400">15+</div>
-                <div className="text-xs sm:text-sm text-gray-400">Technologies</div>
+                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-400">Leadership</div>
+                <div className="text-xs sm:text-sm text-gray-400">& Mentoring</div>
               </div>
             </div>
 
             {/* Enhanced Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-slide-in-up stagger-4 max-w-sm mx-auto lg:max-w-none">
               <button 
-                onClick={() => scrollTo('projects')} 
+                onClick={() => scrollTo('experience')} 
                 className="px-6 sm:px-8 py-3 sm:py-4 gradient-blue text-white rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 font-medium hover-glow text-sm sm:text-base"
               >
-                View My Work
+                View Experience
               </button>
               <button 
                 onClick={() => scrollTo('contact')} 
