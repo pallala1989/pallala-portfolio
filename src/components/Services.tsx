@@ -43,13 +43,13 @@ export const Services = () => {
   ];
 
   return (
-    <section id="services" className="section-spacing bg-muted/30">
+    <section id="services" className="section-spacing bg-background/95">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="font-bold mb-6 text-foreground">
-            Core <span className="text-gradient">Competencies</span>
+          <h2 className="font-bold mb-6 text-foreground font-serif">
+            Core <span className="gradient-text">Competencies</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Comprehensive enterprise solutions and technical leadership across the full technology stack
           </p>
         </div>
@@ -57,11 +57,11 @@ export const Services = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div key={index} className={`executive-card p-8 hover-lift animate-fade-in-up stagger-${index + 1}`}>
-              <div className="w-16 h-16 bg-muted rounded-lg flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-6 border border-primary/30">
                 {service.icon}
               </div>
               
-              <h3 className="text-2xl font-semibold text-foreground mb-4">{service.title}</h3>
+              <h3 className="text-2xl font-semibold text-foreground mb-4 font-serif">{service.title}</h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">{service.description}</p>
               
               <ul className="space-y-3">

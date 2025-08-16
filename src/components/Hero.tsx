@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ArrowDown, MapPin, Mail, Phone, Award, Users, TrendingUp, Star } from 'lucide-react';
 
@@ -62,19 +63,19 @@ export const Hero = () => {
           <div className="space-y-10 animate-slide-in-left">
             <div className="space-y-8">
               <div className="space-y-6">
-                <div className="inline-flex items-center px-6 py-3 bg-accent/20 backdrop-blur-xl rounded-full text-sm font-semibold text-accent-foreground animate-fade-in-up border border-border/40">
+                <div className="inline-flex items-center px-6 py-3 bg-primary/20 backdrop-blur-xl rounded-full text-sm font-semibold text-primary-foreground animate-fade-in-up border border-primary/40">
                   <Award className="w-5 h-5 mr-3 text-primary" />
-                  Senior Lead Java Engineer
+                  <span className="text-primary">Senior Lead Java Engineer</span>
                 </div>
                 
                 <div className="space-y-4">
                   <h1 className="text-balance animate-scale-in">
                     Rajasekhar <span className="gradient-text">Pallala</span>
                   </h1>
-                  <div className="w-20 h-1.5 bg-gradient-to-r from-primary to-primary/60 rounded-full animate-fade-in-up stagger-1 shadow-lg shadow-primary/30"></div>
+                  <div className="w-20 h-1.5 bg-gradient-to-r from-primary to-accent rounded-full animate-fade-in-up stagger-1 shadow-lg shadow-primary/40"></div>
                 </div>
                 
-                <div className="text-2xl text-primary font-semibold animate-fade-in-up stagger-2">
+                <div className="text-2xl text-primary font-semibold animate-fade-in-up stagger-2 font-serif">
                   Virtusa Corp - Chase Banking Solutions
                 </div>
               </div>
@@ -82,7 +83,7 @@ export const Hero = () => {
               {/* Animated Role Section */}
               <div className="executive-card p-8 animate-fade-in-up stagger-3 animate-pulse-glow">
                 <div className="text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wider">Expertise in:</div>
-                <div className="text-3xl font-bold gradient-text min-h-[40px] flex items-center">
+                <div className="text-3xl font-bold gradient-text min-h-[40px] flex items-center font-serif">
                   {displayText}
                   <span className="animate-pulse text-primary ml-1">|</span>
                 </div>
@@ -97,30 +98,30 @@ export const Hero = () => {
               {/* Contact Info */}
               <div className="grid sm:grid-cols-3 gap-6 animate-fade-in-up stagger-5">
                 <div className="flex items-center space-x-4 text-muted-foreground group">
-                  <div className="w-12 h-12 bg-accent/20 backdrop-blur-xl rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 border border-border/40">
+                  <div className="w-12 h-12 bg-primary/20 backdrop-blur-xl rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 border border-primary/30">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-sm font-medium text-foreground">Location</div>
-                    <div className="text-sm">Wilmington, DE</div>
+                    <div className="text-sm text-muted-foreground">Wilmington, DE</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4 text-muted-foreground group">
-                  <div className="w-12 h-12 bg-accent/20 backdrop-blur-xl rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 border border-border/40">
+                  <div className="w-12 h-12 bg-primary/20 backdrop-blur-xl rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 border border-primary/30">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-sm font-medium text-foreground">Email</div>
-                    <div className="text-sm">pallala1989@gmail.com</div>
+                    <div className="text-sm text-muted-foreground">pallala1989@gmail.com</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4 text-muted-foreground group">
-                  <div className="w-12 h-12 bg-accent/20 backdrop-blur-xl rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 border border-border/40">
+                  <div className="w-12 h-12 bg-primary/20 backdrop-blur-xl rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 border border-primary/30">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-sm font-medium text-foreground">Phone</div>
-                    <div className="text-sm">903-921-0271</div>
+                    <div className="text-sm text-muted-foreground">903-921-0271</div>
                   </div>
                 </div>
               </div>
@@ -146,13 +147,13 @@ export const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up stagger-6">
               <button 
                 onClick={() => scrollTo('skills')} 
-                className="px-8 py-4 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-all duration-300 font-semibold shadow-2xl hover:shadow-primary/30 transform hover:-translate-y-2 backdrop-blur-xl border border-primary/20"
+                className="px-8 py-4 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-all duration-300 font-semibold shadow-2xl hover:shadow-primary/40 transform hover:-translate-y-2 backdrop-blur-xl border border-primary/30 hover:border-primary/50"
               >
                 View Technical Skills
               </button>
               <button 
                 onClick={() => scrollTo('contact')} 
-                className="px-8 py-4 border-2 border-primary/60 text-primary rounded-xl hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold backdrop-blur-xl hover:shadow-2xl hover:shadow-primary/30 transform hover:-translate-y-2"
+                className="px-8 py-4 border-2 border-primary/60 text-primary rounded-xl hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold backdrop-blur-xl hover:shadow-2xl hover:shadow-primary/40 transform hover:-translate-y-2"
               >
                 Get In Touch
               </button>
@@ -188,8 +189,8 @@ export const Hero = () => {
               </div>
               
               {/* Background Decoration */}
-              <div className="absolute -top-8 -right-8 w-24 h-24 bg-primary/20 rounded-full animate-float backdrop-blur-xl"></div>
-              <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-accent/20 rounded-full animate-float backdrop-blur-xl" style={{ animationDelay: '0.5s' }}></div>
+              <div className="absolute -top-8 -right-8 w-24 h-24 bg-primary/20 rounded-full animate-float backdrop-blur-xl border border-primary/20"></div>
+              <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-accent/20 rounded-full animate-float backdrop-blur-xl border border-accent/20" style={{ animationDelay: '0.5s' }}></div>
             </div>
           </div>
         </div>
@@ -198,7 +199,7 @@ export const Hero = () => {
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-scale-in">
           <button 
             onClick={() => scrollTo('skills')}
-            className="p-4 rounded-full bg-accent/20 border border-border/40 hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-2xl hover:shadow-primary/30 backdrop-blur-xl animate-pulse-glow"
+            className="p-4 rounded-full bg-primary/20 border border-primary/40 hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-2xl hover:shadow-primary/40 backdrop-blur-xl animate-pulse-glow"
           >
             <ArrowDown className="w-6 h-6" />
           </button>
