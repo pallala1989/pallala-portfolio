@@ -1,12 +1,21 @@
 
 import React, { useState, useEffect } from 'react';
-import { ArrowDown, Star, Users, Award } from 'lucide-react';
+import { ArrowDown, MapPin, Mail, Phone, Award, Users, TrendingUp } from 'lucide-react';
 
 export const Hero = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const roles = ['Senior Lead Java Engineer', 'Spring Boot Expert', 'Microservices Architect', 'AWS Solutions', 'Kubernetes Leader', 'PCF Specialist', 'SRE Engineer', 'Team Leadership', 'React Development', 'Enterprise Solutions'];
+  const roles = [
+    'Senior Lead Java Engineer',
+    'Enterprise Solutions Architect', 
+    'Microservices Expert',
+    'AWS Cloud Specialist',
+    'Technical Leadership',
+    'Performance Engineering',
+    'DevOps & SRE',
+    'Full Stack Development'
+  ];
 
   useEffect(() => {
     const currentRole = roles[currentRoleIndex];
@@ -33,114 +42,126 @@ export const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen bg-background relative overflow-hidden pt-16 sm:pt-20">
-      {/* Modern Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-4 sm:left-10 w-20 sm:w-32 h-20 sm:h-32 gradient-secondary rounded-full opacity-20 animate-scale-in"></div>
-        <div className="absolute top-40 right-4 sm:right-20 w-16 sm:w-24 h-16 sm:h-24 gradient-primary rounded-full opacity-20 animate-scale-in stagger-2"></div>
-        <div className="absolute bottom-40 left-4 sm:left-20 w-24 sm:w-40 h-24 sm:h-40 gradient-accent rounded-full opacity-20 animate-scale-in stagger-3"></div>
-        <div className="absolute bottom-20 right-4 sm:right-10 w-20 sm:w-28 h-20 sm:h-28 gradient-primary rounded-full opacity-20 animate-scale-in stagger-1"></div>
-      </div>
-
+    <section id="home" className="min-h-screen bg-background relative overflow-hidden pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen py-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-8">
           
-          {/* Profile Image */}
-          <div className="relative animate-slide-in-right stagger-2 order-1 lg:order-2 w-full flex justify-center lg:block">
-            <div className="relative">
-              <div className="w-56 sm:w-64 md:w-72 lg:w-80 h-56 sm:h-64 md:h-72 lg:h-80 mx-auto rounded-full gradient-primary p-2 shadow-2xl animate-glow">
-                <div className="w-full h-full rounded-full bg-card p-2 relative overflow-hidden glass-card">
-                  <img 
-                    src="https://i.postimg.cc/Vst9vkXF/raja-passphoto.png" 
-                    alt="Rajasekhar Pallala" 
-                    className="w-full h-full object-cover rounded-full" 
-                  />
-                  
-                  <div className="absolute top-2 sm:top-4 right-2 sm:right-4 p-1.5 sm:p-2 gradient-secondary rounded-full animate-scale-in shadow-lg">
-                    <Star size={12} className="text-white sm:w-4 sm:h-4" />
-                  </div>
-                  <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 p-1.5 sm:p-2 gradient-accent rounded-full animate-scale-in stagger-2 shadow-lg">
-                    <Users size={12} className="text-white sm:w-4 sm:h-4" />
-                  </div>
-                  <div className="absolute top-1/2 left-2 sm:left-4 p-1.5 sm:p-2 gradient-primary rounded-full animate-scale-in stagger-3 shadow-lg">
-                    <Award size={12} className="text-white sm:w-4 sm:h-4" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Content */}
-          <div className="space-y-6 sm:space-y-8 animate-slide-in-left order-2 lg:order-1 text-center lg:text-left">
-            <div className="space-y-4 sm:space-y-6">
-              <div className="space-y-3 sm:space-y-4">
-                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground font-light animate-fade-in-up">
-                  <span className="text-2xl">👋</span> Hi, I'm
+          <div className="space-y-8 animate-slide-in-left">
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <div className="inline-flex items-center px-4 py-2 bg-muted rounded-full text-sm font-medium text-muted-foreground animate-fade-in-up">
+                  <Award className="w-4 h-4 mr-2" />
+                  Senior Lead Java Engineer
                 </div>
-                <div className="relative">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-scale-in text-foreground">
+                
+                <div>
+                  <h1 className="font-bold text-foreground leading-tight animate-scale-in">
                     Rajasekhar Pallala
                   </h1>
-                  <div className="absolute -bottom-1 sm:-bottom-2 left-1/2 lg:left-0 transform -translate-x-1/2 lg:translate-x-0 w-24 sm:w-32 h-0.5 sm:h-1 gradient-primary animate-fade-in-up stagger-2 rounded-full"></div>
+                  <div className="w-24 h-1 bg-primary mt-4 rounded-full animate-fade-in-up stagger-1"></div>
                 </div>
-                <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-medium animate-fade-in-up stagger-2">Senior Lead Java Engineer</div>
-                <div className="text-sm sm:text-base text-primary animate-fade-in-up stagger-3">📍 Wilmington, DE | 📧 pallala1989@gmail.com | 📱 903-921-0271</div>
+                
+                <div className="text-xl text-muted-foreground font-medium animate-fade-in-up stagger-2">
+                  Virtusa Corp - Chase Banking Solutions
+                </div>
               </div>
               
               {/* Animated Role Section */}
-              <div className="animate-fade-in-up stagger-3 glass-card rounded-xl p-3 sm:p-4 border mx-auto lg:mx-0 max-w-md lg:max-w-none">
-                <div className="text-sm sm:text-base lg:text-lg xl:text-xl text-primary font-medium mb-2">💡 Specializing in:</div>
-                <div className="text-sm sm:text-base lg:text-lg xl:text-xl text-gradient font-bold min-w-[200px]">
+              <div className="executive-card p-6 animate-fade-in-up stagger-3">
+                <div className="text-sm font-medium text-muted-foreground mb-2">Expertise in:</div>
+                <div className="text-2xl font-semibold text-gradient min-h-[32px]">
                   {displayText}
                   <span className="animate-pulse text-primary">|</span>
                 </div>
               </div>
               
-              <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0 animate-fade-in-up stagger-4">
-                Senior Lead Java Engineer at Virtusa Corp (Chase client) with 12+ years of enterprise experience. 
-                Expert in modern Java technologies, microservices architecture, and cloud-native solutions.
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl animate-fade-in-up stagger-4">
+                Dynamic Lead Consultant with 12+ years of enterprise experience, excelling in Java development and 
+                microservices architecture. Proven track record in performance tuning, cloud solutions, and leading 
+                cross-functional teams to deliver mission-critical banking applications.
               </p>
+
+              {/* Contact Info */}
+              <div className="grid sm:grid-cols-3 gap-4 animate-fade-in-up stagger-5">
+                <div className="flex items-center space-x-3 text-sm text-muted-foreground">
+                  <MapPin className="w-4 h-4 text-primary" />
+                  <span>Wilmington, DE</span>
+                </div>
+                <div className="flex items-center space-x-3 text-sm text-muted-foreground">
+                  <Mail className="w-4 h-4 text-primary" />
+                  <span>pallala1989@gmail.com</span>
+                </div>
+                <div className="flex items-center space-x-3 text-sm text-muted-foreground">
+                  <Phone className="w-4 h-4 text-primary" />
+                  <span>903-921-0271</span>
+                </div>
+              </div>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-4 lg:gap-6 py-6 sm:py-8 max-w-md mx-auto lg:max-w-none">
-              <div className="text-center glass-card p-3 sm:p-4 rounded-xl hover-lift animate-scale-in stagger-4">
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gradient">12+</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Years Experience</div>
+            <div className="grid grid-cols-3 gap-6 py-8">
+              <div className="text-center executive-card p-6 hover-lift animate-scale-in stagger-4">
+                <div className="text-3xl font-bold text-foreground">12+</div>
+                <div className="text-sm text-muted-foreground mt-1">Years Experience</div>
               </div>
-              <div className="text-center glass-card p-3 sm:p-4 rounded-xl hover-lift animate-scale-in stagger-5">
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gradient">Enterprise</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Solutions</div>
+              <div className="text-center executive-card p-6 hover-lift animate-scale-in stagger-5">
+                <div className="text-3xl font-bold text-foreground">Enterprise</div>
+                <div className="text-sm text-muted-foreground mt-1">Banking Solutions</div>
               </div>
-              <div className="text-center glass-card p-3 sm:p-4 rounded-xl hover-lift animate-scale-in stagger-6">
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gradient">Leadership</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">& Mentoring</div>
+              <div className="text-center executive-card p-6 hover-lift animate-scale-in stagger-6">
+                <div className="text-3xl font-bold text-foreground">Leadership</div>
+                <div className="text-sm text-muted-foreground mt-1">& Mentoring</div>
               </div>
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-in-up stagger-4 max-w-sm mx-auto lg:max-w-none">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up stagger-6">
               <button 
                 onClick={() => scrollTo('skills')} 
-                className="px-6 sm:px-8 py-3 sm:py-4 gradient-primary text-white rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 font-medium text-sm sm:text-base"
+                className="px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 font-medium"
               >
-                View Skills
+                View Technical Skills
               </button>
               <button 
                 onClick={() => scrollTo('contact')} 
-                className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-all duration-300 font-medium glass-card text-sm sm:text-base"
+                className="px-8 py-4 border border-border text-foreground rounded-lg hover:bg-muted transition-all duration-300 font-medium"
               >
                 Get In Touch
               </button>
             </div>
           </div>
+
+          {/* Professional Image */}
+          <div className="relative animate-slide-in-right stagger-2 flex justify-center lg:justify-end">
+            <div className="relative">
+              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden executive-card">
+                <img 
+                  src="https://i.postimg.cc/Vst9vkXF/raja-passphoto.png" 
+                  alt="Rajasekhar Pallala" 
+                  className="w-full h-full object-cover" 
+                />
+              </div>
+              
+              {/* Professional badges */}
+              <div className="absolute -top-4 -right-4 executive-card p-3 animate-scale-in">
+                <Users className="w-6 h-6 text-primary" />
+              </div>
+              <div className="absolute -bottom-4 -left-4 executive-card p-3 animate-scale-in stagger-2">
+                <TrendingUp className="w-6 h-6 text-primary" />
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-scale-in">
-          <div className="p-2 sm:p-3 rounded-full glass-card border border-primary">
-            <ArrowDown className="text-primary" size={20} />
-          </div>
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-scale-in">
+          <button 
+            onClick={() => scrollTo('skills')}
+            className="p-3 rounded-full border border-border hover:bg-muted transition-all duration-300"
+          >
+            <ArrowDown className="w-5 h-5 text-muted-foreground" />
+          </button>
         </div>
       </div>
     </section>
