@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { ArrowDown, MapPin, Mail, Phone, Award, Users, TrendingUp } from 'lucide-react';
+import { ArrowDown, MapPin, Mail, Phone, Award, Users, TrendingUp, Star } from 'lucide-react';
 
 export const Hero = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -13,7 +13,7 @@ export const Hero = () => {
     'AWS Cloud Specialist',
     'Technical Leadership',
     'Performance Engineering',
-    'DevOps & SRE',
+    'DevOps & SRE Professional',
     'Full Stack Development'
   ];
 
@@ -43,75 +43,90 @@ export const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen bg-background relative overflow-hidden pt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-8">
+      <div className="max-w-7xl mx-auto container-padding relative">
+        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-screen py-12">
           
           {/* Content */}
-          <div className="space-y-8 animate-slide-in-left">
-            <div className="space-y-6">
-              <div className="space-y-4">
-                <div className="inline-flex items-center px-4 py-2 bg-muted rounded-full text-sm font-medium text-muted-foreground animate-fade-in-up">
-                  <Award className="w-4 h-4 mr-2" />
+          <div className="space-y-10 animate-slide-in-left">
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <div className="inline-flex items-center px-6 py-3 bg-accent rounded-full text-sm font-semibold text-accent-foreground animate-fade-in-up border border-border">
+                  <Award className="w-5 h-5 mr-3 text-primary" />
                   Senior Lead Java Engineer
                 </div>
                 
-                <div>
-                  <h1 className="font-bold text-foreground leading-tight animate-scale-in">
-                    Rajasekhar Pallala
+                <div className="space-y-4">
+                  <h1 className="text-balance animate-scale-in">
+                    Rajasekhar <span className="gradient-text">Pallala</span>
                   </h1>
-                  <div className="w-24 h-1 bg-primary mt-4 rounded-full animate-fade-in-up stagger-1"></div>
+                  <div className="w-20 h-1.5 bg-primary rounded-full animate-fade-in-up stagger-1"></div>
                 </div>
                 
-                <div className="text-xl text-muted-foreground font-medium animate-fade-in-up stagger-2">
+                <div className="text-2xl text-primary font-semibold animate-fade-in-up stagger-2">
                   Virtusa Corp - Chase Banking Solutions
                 </div>
               </div>
               
               {/* Animated Role Section */}
-              <div className="executive-card p-6 animate-fade-in-up stagger-3">
-                <div className="text-sm font-medium text-muted-foreground mb-2">Expertise in:</div>
-                <div className="text-2xl font-semibold text-gradient min-h-[32px]">
+              <div className="executive-card p-8 animate-fade-in-up stagger-3">
+                <div className="text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wider">Expertise in:</div>
+                <div className="text-3xl font-bold gradient-text min-h-[40px] flex items-center">
                   {displayText}
-                  <span className="animate-pulse text-primary">|</span>
+                  <span className="animate-pulse text-primary ml-1">|</span>
                 </div>
               </div>
               
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl animate-fade-in-up stagger-4">
+              <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl animate-fade-in-up stagger-4 text-balance">
                 Dynamic Lead Consultant with 12+ years of enterprise experience, excelling in Java development and 
                 microservices architecture. Proven track record in performance tuning, cloud solutions, and leading 
                 cross-functional teams to deliver mission-critical banking applications.
               </p>
 
               {/* Contact Info */}
-              <div className="grid sm:grid-cols-3 gap-4 animate-fade-in-up stagger-5">
-                <div className="flex items-center space-x-3 text-sm text-muted-foreground">
-                  <MapPin className="w-4 h-4 text-primary" />
-                  <span>Wilmington, DE</span>
+              <div className="grid sm:grid-cols-3 gap-6 animate-fade-in-up stagger-5">
+                <div className="flex items-center space-x-4 text-muted-foreground group">
+                  <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-foreground">Location</div>
+                    <div className="text-sm">Wilmington, DE</div>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-3 text-sm text-muted-foreground">
-                  <Mail className="w-4 h-4 text-primary" />
-                  <span>pallala1989@gmail.com</span>
+                <div className="flex items-center space-x-4 text-muted-foreground group">
+                  <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-foreground">Email</div>
+                    <div className="text-sm">pallala1989@gmail.com</div>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-3 text-sm text-muted-foreground">
-                  <Phone className="w-4 h-4 text-primary" />
-                  <span>903-921-0271</span>
+                <div className="flex items-center space-x-4 text-muted-foreground group">
+                  <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-foreground">Phone</div>
+                    <div className="text-sm">903-921-0271</div>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 py-8">
-              <div className="text-center executive-card p-6 hover-lift animate-scale-in stagger-4">
-                <div className="text-3xl font-bold text-foreground">12+</div>
-                <div className="text-sm text-muted-foreground mt-1">Years Experience</div>
+              <div className="stats-card hover-lift animate-scale-in stagger-4">
+                <div className="stats-number">12+</div>
+                <div className="stats-label">Years Experience</div>
               </div>
-              <div className="text-center executive-card p-6 hover-lift animate-scale-in stagger-5">
-                <div className="text-3xl font-bold text-foreground">Enterprise</div>
-                <div className="text-sm text-muted-foreground mt-1">Banking Solutions</div>
+              <div className="stats-card hover-lift animate-scale-in stagger-5">
+                <div className="stats-number">Enterprise</div>
+                <div className="stats-label">Banking Solutions</div>
               </div>
-              <div className="text-center executive-card p-6 hover-lift animate-scale-in stagger-6">
-                <div className="text-3xl font-bold text-foreground">Leadership</div>
-                <div className="text-sm text-muted-foreground mt-1">& Mentoring</div>
+              <div className="stats-card hover-lift animate-scale-in stagger-6">
+                <div className="stats-number">Leadership</div>
+                <div className="stats-label">& Mentoring</div>
               </div>
             </div>
 
@@ -119,37 +134,50 @@ export const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up stagger-6">
               <button 
                 onClick={() => scrollTo('skills')} 
-                className="px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 font-medium"
+                className="px-8 py-4 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 View Technical Skills
               </button>
               <button 
                 onClick={() => scrollTo('contact')} 
-                className="px-8 py-4 border border-border text-foreground rounded-lg hover:bg-muted transition-all duration-300 font-medium"
+                className="px-8 py-4 border-2 border-primary text-primary rounded-xl hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold"
               >
                 Get In Touch
               </button>
             </div>
           </div>
 
-          {/* Professional Image */}
+          {/* Enhanced Professional Image */}
           <div className="relative animate-slide-in-right stagger-2 flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden executive-card">
-                <img 
-                  src="https://i.postimg.cc/Vst9vkXF/raja-passphoto.png" 
-                  alt="Rajasekhar Pallala" 
-                  className="w-full h-full object-cover" 
-                />
+              {/* Main Profile Container */}
+              <div className="profile-container w-80 h-80 lg:w-96 lg:h-96">
+                <div className="profile-image w-full h-full">
+                  <img 
+                    src="https://i.postimg.cc/Vst9vkXF/raja-passphoto.png" 
+                    alt="Rajasekhar Pallala - Senior Lead Java Engineer" 
+                    className="w-full h-full object-cover object-center" 
+                  />
+                </div>
               </div>
               
-              {/* Professional badges */}
-              <div className="absolute -top-4 -right-4 executive-card p-3 animate-scale-in">
-                <Users className="w-6 h-6 text-primary" />
+              {/* Floating Badges */}
+              <div className="floating-badge -top-4 -right-6 animate-scale-in">
+                <Users className="w-5 h-5 mr-2" />
+                Team Lead
               </div>
-              <div className="absolute -bottom-4 -left-4 executive-card p-3 animate-scale-in stagger-2">
-                <TrendingUp className="w-6 h-6 text-primary" />
+              <div className="floating-badge -bottom-4 -left-6 animate-scale-in stagger-2">
+                <TrendingUp className="w-5 h-5 mr-2" />
+                Growth
               </div>
+              <div className="floating-badge top-1/2 -left-8 animate-scale-in stagger-3">
+                <Star className="w-5 h-5 mr-2" />
+                Expert
+              </div>
+              
+              {/* Background Decoration */}
+              <div className="absolute -top-8 -right-8 w-24 h-24 bg-primary/10 rounded-full animate-float"></div>
+              <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-accent/30 rounded-full animate-float" style={{ animationDelay: '0.5s' }}></div>
             </div>
           </div>
         </div>
@@ -158,9 +186,9 @@ export const Hero = () => {
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-scale-in">
           <button 
             onClick={() => scrollTo('skills')}
-            className="p-3 rounded-full border border-border hover:bg-muted transition-all duration-300"
+            className="p-4 rounded-full bg-accent border border-border hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            <ArrowDown className="w-5 h-5 text-muted-foreground" />
+            <ArrowDown className="w-6 h-6" />
           </button>
         </div>
       </div>

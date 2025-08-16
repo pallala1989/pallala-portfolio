@@ -1,153 +1,136 @@
 
 import React from 'react';
-import { GraduationCap, User, Award, Target, Briefcase, Clock, Shield } from 'lucide-react';
+import { Target, Award, Users, TrendingUp, Code, Shield, Zap, Globe } from 'lucide-react';
 
 export const About = () => {
-  return (
-    <section id="about" className="py-24 bg-gray-800 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 right-10 w-40 h-40 gradient-purple rounded-full opacity-10 animate-float"></div>
-        <div className="absolute bottom-20 left-10 w-32 h-32 gradient-blue rounded-full opacity-10 animate-pulse-custom"></div>
-      </div>
+  const highlights = [
+    {
+      icon: <Code className="text-primary-foreground w-6 h-6" />,
+      title: "Technical Excellence",
+      description: "12+ years mastering Java ecosystem, from legacy systems to cutting-edge microservices."
+    },
+    {
+      icon: <Users className="text-primary-foreground w-6 h-6" />,
+      title: "Leadership Excellence",
+      description: "Leading cross-functional teams, mentoring developers, and driving technical strategies."
+    },
+    {
+      icon: <Shield className="text-primary-foreground w-6 h-6" />,
+      title: "Enterprise Solutions",
+      description: "Architecting robust, scalable solutions for mission-critical banking applications."
+    },
+    {
+      icon: <Zap className="text-primary-foreground w-6 h-6" />,
+      title: "Performance Engineering",
+      description: "Optimizing application performance and ensuring 99.9% uptime for production systems."
+    }
+  ];
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center mb-16 animate-slide-in-up">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            Professional <span className="text-gradient">Profile</span>
+  const achievements = [
+    { metric: "12+", label: "Years Experience", icon: <Award className="w-5 h-5 text-primary" /> },
+    { metric: "50+", label: "Projects Delivered", icon: <Target className="w-5 h-5 text-primary" /> },
+    { metric: "Enterprise", label: "Banking Solutions", icon: <Globe className="w-5 h-5 text-primary" /> },
+    { metric: "24/7", label: "Production Support", icon: <TrendingUp className="w-5 h-5 text-primary" /> }
+  ];
+
+  return (
+    <section id="about" className="section-spacing bg-background">
+      <div className="max-w-7xl mx-auto container-padding">
+        <div className="section-header animate-fade-in-up">
+          <h2 className="text-balance">
+            About <span className="gradient-text">Rajasekhar Pallala</span>
           </h2>
-          <div className="w-24 h-1 gradient-blue mx-auto rounded-full"></div>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
+            Senior Lead Java Engineer with expertise in enterprise solutions and technical leadership
+          </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left Content */}
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Content */}
           <div className="space-y-8 animate-slide-in-left">
-            <div className="glass-card rounded-2xl p-8 shadow-2xl border border-gray-700 hover-lift">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="p-4 gradient-blue rounded-xl animate-glow">
-                  <User className="text-white" size={32} />
-                </div>
-                <h3 className="text-3xl font-bold text-white">Summary</h3>
-              </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-foreground">
+                Driving Innovation in Enterprise Java Development
+              </h3>
               
-              <div className="space-y-6 text-gray-300 leading-relaxed">
-                <p className="text-lg">
-                  Dynamic Lead Consultant with extensive experience excelling in Java development and 
-                  microservices. Proven ability in performance tuning and agile methodologies, driving 
-                  successful deployments and issue resolutions.
+              <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  As a Senior Lead Java Engineer at Virtusa Corp working with Chase Banking Solutions, 
+                  I specialize in architecting and delivering enterprise-grade applications that serve 
+                  millions of users globally.
                 </p>
                 
-                <p className="text-lg">
-                  Adept at collaborating with cross-functional teams, leveraging strong problem-solving 
-                  skills to enhance application efficiency and reliability. Passionate about delivering 
-                  innovative solutions in fast-paced environments.
+                <p>
+                  My expertise spans the complete software development lifecycle, from requirements 
+                  analysis to production deployment and monitoring. I excel in modernizing legacy 
+                  systems, implementing microservices architectures, and ensuring optimal performance 
+                  in high-traffic environments.
+                </p>
+                
+                <p>
+                  With a passion for mentoring and knowledge sharing, I lead technical discussions, 
+                  conduct code reviews, and foster a culture of continuous learning within my teams.
                 </p>
               </div>
             </div>
 
-            {/* Experience Highlights */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="glass-card rounded-xl p-6 shadow-2xl border border-gray-700 text-center hover-lift animate-fade-in-scale stagger-2">
-                <div className="p-3 gradient-orange rounded-lg w-fit mx-auto mb-3 animate-glow">
-                  <Briefcase className="text-white" size={24} />
+            {/* Highlights */}
+            <div className="grid sm:grid-cols-2 gap-6">
+              {highlights.map((highlight, index) => (
+                <div key={index} className={`executive-card p-6 hover-lift animate-scale-in stagger-${index + 1}`}>
+                  <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mb-4">
+                    {highlight.icon}
+                  </div>
+                  <h4 className="font-bold text-foreground mb-2">{highlight.title}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{highlight.description}</p>
                 </div>
-                <div className="text-2xl font-bold text-gradient-gold">12+</div>
-                <div className="text-sm text-gray-400">Years Leading</div>
-              </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Achievements */}
+          <div className="space-y-8 animate-slide-in-right">
+            <div className="executive-card p-8">
+              <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Key Achievements</h3>
               
-              <div className="glass-card rounded-xl p-6 shadow-2xl border border-gray-700 text-center hover-lift animate-fade-in-scale stagger-3">
-                <div className="p-3 gradient-green rounded-lg w-fit mx-auto mb-3 animate-glow">
-                  <Shield className="text-white" size={24} />
-                </div>
-                <div className="text-2xl font-bold text-green-400">SRE</div>
-                <div className="text-sm text-gray-400">Operations</div>
+              <div className="grid grid-cols-2 gap-6">
+                {achievements.map((achievement, index) => (
+                  <div key={index} className={`text-center space-y-3 animate-scale-in stagger-${index + 1}`}>
+                    <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto">
+                      {achievement.icon}
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-primary">{achievement.metric}</div>
+                      <div className="text-sm text-muted-foreground font-medium">{achievement.label}</div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
             {/* Certifications */}
-            <div className="glass-card rounded-2xl p-8 shadow-2xl border border-gray-700 hover-lift">
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="p-4 gradient-purple rounded-xl animate-glow">
-                  <Award className="text-white" size={32} />
-                </div>
-                <h3 className="text-3xl font-bold text-white">Certifications</h3>
-              </div>
+            <div className="executive-card p-8">
+              <h3 className="text-xl font-bold text-foreground mb-6">Certifications & Education</h3>
               
-              <div className="glass-effect p-6 rounded-xl">
-                <h4 className="text-xl font-semibold text-white mb-2">
-                  AWS Solutions Architect - Associate
-                </h4>
-                <p className="text-blue-400 font-medium mb-1">Amazon Web Services</p>
-                <p className="text-gray-400">Cloud Architecture & Solutions</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Content */}
-          <div className="space-y-8 animate-slide-in-right">
-            {/* Education */}
-            <div className="glass-card rounded-2xl p-8 shadow-2xl border border-gray-700 hover-lift">
-              <div className="flex items-center space-x-4 mb-8">
-                <div className="p-4 gradient-green rounded-xl animate-glow">
-                  <GraduationCap className="text-white" size={32} />
-                </div>
-                <h3 className="text-3xl font-bold text-white">Education</h3>
-              </div>
-
-              <div className="space-y-6">
-                <div className="relative pl-8 border-l-2 border-blue-400 animate-slide-in-right stagger-2">
-                  <div className="absolute -left-2 top-0 w-4 h-4 gradient-blue rounded-full animate-pulse-custom"></div>
-                  <div className="glass-effect p-6 rounded-xl">
-                    <h4 className="text-xl font-semibold text-white mb-2">
-                      Master of Computer Applications
-                    </h4>
-                    <p className="text-blue-400 font-medium mb-1">JNTUA, India</p>
-                    <p className="text-gray-400">Computer Science • June 2013</p>
-                  </div>
-                </div>
-
-                <div className="relative pl-8 border-l-2 border-blue-400 animate-slide-in-right stagger-3">
-                  <div className="absolute -left-2 top-0 w-4 h-4 gradient-blue rounded-full animate-pulse-custom"></div>
-                  <div className="glass-effect p-6 rounded-xl">
-                    <h4 className="text-xl font-semibold text-white mb-2">
-                      Bachelor of Science
-                    </h4>
-                    <p className="text-blue-400 font-medium mb-1">SVU, India</p>
-                    <p className="text-gray-400">Computational Science • June 2010</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Core Values */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="glass-card rounded-xl p-6 shadow-2xl border border-gray-700 text-center hover-lift animate-fade-in-scale stagger-4">
-                <div className="p-3 gradient-orange rounded-lg w-fit mx-auto mb-3 animate-glow">
-                  <Target className="text-white" size={24} />
-                </div>
-                <h4 className="text-white font-semibold mb-1">Innovation</h4>
-                <p className="text-gray-400 text-sm">Driving cutting-edge solutions</p>
-              </div>
-              <div className="glass-card rounded-xl p-6 shadow-2xl border border-gray-700 text-center hover-lift animate-fade-in-scale stagger-5">
-                <div className="p-3 gradient-purple rounded-lg w-fit mx-auto mb-3 animate-glow">
-                  <Clock className="text-white" size={24} />
-                </div>
-                <h4 className="text-white font-semibold mb-1">Reliability</h4>
-                <p className="text-gray-400 text-sm">24/7 operational excellence</p>
-              </div>
-            </div>
-
-            {/* Languages */}
-            <div className="glass-card rounded-2xl p-8 shadow-2xl border border-gray-700 hover-lift">
-              <h3 className="text-2xl font-bold text-white mb-6">Languages</h3>
               <div className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-300">English</span>
-                  <span className="text-blue-400 font-medium">Full Professional</span>
+                <div className="flex items-center space-x-4 p-4 bg-accent rounded-lg">
+                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                    <Shield className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-foreground">AWS Solutions Architect - Associate</div>
+                    <div className="text-sm text-muted-foreground">Amazon Web Services</div>
+                  </div>
                 </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-300">Telugu</span>
-                  <span className="text-green-400 font-medium">Native</span>
+                
+                <div className="flex items-center space-x-4 p-4 bg-accent rounded-lg">
+                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                    <Award className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-foreground">Master of Computer Applications</div>
+                    <div className="text-sm text-muted-foreground">JNTUA - Computer Science</div>
+                  </div>
                 </div>
               </div>
             </div>

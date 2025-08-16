@@ -1,118 +1,149 @@
 
 import React from 'react';
-import { ExternalLink, Code, Monitor, Cloud, Database, Shield, CreditCard } from 'lucide-react';
+import { ExternalLink, Code, Monitor, Cloud, Database, Shield, CreditCard, Calendar } from 'lucide-react';
 
 export const Projects = () => {
   const projects = [
     {
       title: "Credit Card Products Suite",
-      company: "DE - Lead Consultant",
-      description: "Leading comprehensive credit card management systems including CAM (Card Account Management), authorizations, financial transactions, lending, and pricing modules. Implementing robust monitoring with Dynatrace and Splunk for production reliability.",
-      technologies: ["Java", "Spring Boot", "PCF", "Kubernetes", "Dynatrace", "Splunk", "Control-M"],
-      icon: <CreditCard className="text-white" size={32} />,
-      color: "gradient-blue",
+      company: "Virtusa Corp - Chase Banking",
+      period: "July 2025 - Present",
+      description: "Leading comprehensive credit card management systems including CAM (Card Account Management), authorizations, financial transactions, lending, and pricing modules as Senior Lead Java Engineer.",
+      technologies: ["Java 21", "Spring Boot 3.x", "Kubernetes", "AWS", "Dynatrace", "Splunk", "PCF"],
+      icon: <CreditCard className="text-primary-foreground" size={32} />,
+      color: "bg-primary",
       achievements: [
-        "24/7 production support and monitoring",
+        "Leading technical architecture for next-gen banking solutions",
+        "Implementing microservices with latest Java 21 features",
+        "Managing cross-functional teams and stakeholder communications",
+        "Driving DevOps practices and cloud-native deployments"
+      ],
+      current: true
+    },
+    {
+      title: "Legacy Credit Card Systems",
+      company: "DE - Lead Consultant", 
+      period: "Oct 2021 - June 2025",
+      description: "Led comprehensive credit card management systems including CAM, authorizations, financial transactions, lending, and pricing modules with 24/7 production support.",
+      technologies: ["Java", "Spring Boot", "PCF", "Kubernetes", "Dynatrace", "Splunk", "Control-M"],
+      icon: <Code className="text-primary-foreground" size={32} />,
+      color: "bg-primary/90",
+      achievements: [
+        "24/7 production support and monitoring excellence",
         "PCF and Kubernetes operations management", 
         "Custom service creation and deployment automation",
-        "SR/DR flip events coordination"
+        "SR/DR flip events coordination and execution"
       ]
     },
     {
       title: "GlaceEMR Healthcare Platform", 
       company: "GlaceEMR - Full Stack Developer",
-      description: "Developed ONC certified electronic medical records software with integrated patient portal, e-prescription system, lab interfaces, and HIPAA-compliant data security for comprehensive healthcare management.",
+      period: "Sep 2020 - Sep 2021",
+      description: "Developed ONC certified electronic medical records software with integrated patient portal, e-prescription system, and HIPAA-compliant security.",
       technologies: ["Spring MVC", "JDBC", "Jaspersoft", "Hibernate", "Java"],
-      icon: <Shield className="text-white" size={32} />,
-      color: "gradient-orange",
+      icon: <Shield className="text-primary-foreground" size={32} />,
+      color: "bg-primary/80",
       achievements: [
         "ONC certification compliance implementation",
-        "Patient portal and e-RX integration",
-        "HIPAA-compliant security measures",
-        "Automated report generation system"
+        "Patient portal and e-RX integration development",
+        "HIPAA-compliant security measures implementation",
+        "Automated report generation system design"
       ]
     },
     {
       title: "ACETP Microservices Platform",
       company: "BNP Paribas - Senior Developer", 
-      description: "Architected and developed microservices for fund transfer operations using Apache Camel integration patterns, Docker containerization, and Jenkins CI/CD for custody, clearing, and settlement services.",
+      period: "Aug 2019 - Aug 2020",
+      description: "Architected microservices for fund transfer operations using Apache Camel integration patterns and Docker containerization for custody and settlement services.",
       technologies: ["Spring Boot", "Apache Camel", "Docker", "Jenkins", "Microservices"],
-      icon: <Cloud className="text-white" size={32} />,
-      color: "gradient-green",
+      icon: <Cloud className="text-primary-foreground" size={32} />,
+      color: "bg-primary/70",
       achievements: [
-        "Microservices architecture design",
-        "Apache Camel integration patterns",
-        "Docker deployment automation",
-        "24/7 production monitoring and support"
+        "Microservices architecture design and implementation",
+        "Apache Camel integration patterns development",
+        "Docker deployment automation setup",
+        "24/7 production monitoring and support delivery"
       ]
     },
     {
       title: "EIP Billing Automation System",
       company: "EIP - IT Application Engineer",
-      description: "Designed and implemented comprehensive billing automation for Equipment Installment Plan, enabling zero-interest mobile equipment financing with integrated payment processing and customer management.",
+      period: "Aug 2012 - Aug 2019",
+      description: "Designed comprehensive billing automation for Equipment Installment Plan, enabling zero-interest mobile equipment financing with integrated payment processing.",
       technologies: ["Core Java", "Spring MVC", "Hibernate", "REST", "SOAP", "WebLogic"],
-      icon: <Database className="text-white" size={32} />,
-      color: "gradient-purple",
+      icon: <Database className="text-primary-foreground" size={32} />,
+      color: "bg-primary/60",
       achievements: [
-        "Full SDLC implementation",
+        "Full SDLC implementation and management",
         "REST and SOAP web services integration",
         "WebLogic deployment optimization",
-        "Performance tuning and monitoring"
+        "Performance tuning and monitoring implementation"
       ]
     }
   ];
 
   return (
-    <section id="projects" className="py-24 bg-gray-800 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 right-10 w-36 h-36 gradient-green rounded-full opacity-10 animate-float"></div>
-        <div className="absolute bottom-20 left-10 w-28 h-28 gradient-purple rounded-full opacity-10 animate-pulse-custom"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center mb-16 animate-slide-in-up">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-            Enterprise <span className="text-gradient">Solutions</span>
+    <section id="projects" className="section-spacing bg-accent/30">
+      <div className="max-w-7xl mx-auto container-padding">
+        <div className="section-header animate-fade-in-up">
+          <h2 className="text-balance">
+            Enterprise <span className="gradient-text">Solutions</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
             Leading complex enterprise projects across financial services, healthcare, and fintech domains
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className={`glass-card rounded-2xl overflow-hidden shadow-2xl border border-gray-700 hover-lift animate-fade-in-scale stagger-${index + 1}`}>
+            <div key={index} className={`executive-card overflow-hidden hover-lift animate-scale-in stagger-${index + 1} ${project.current ? 'ring-2 ring-primary/50' : ''}`}>
               <div className="p-8">
-                <div className="flex items-center justify-between mb-6">
-                  <div className={`p-4 ${project.color} rounded-xl animate-glow`}>
+                <div className="flex items-start justify-between mb-6">
+                  <div className={`p-4 ${project.color} rounded-2xl shadow-lg`}>
                     {project.icon}
                   </div>
-                  <ExternalLink className="text-gray-400 hover:text-blue-400 cursor-pointer transition-colors hover-lift" size={20} />
+                  <div className="flex items-center gap-2">
+                    {project.current && (
+                      <span className="bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full font-semibold">
+                        Current
+                      </span>
+                    )}
+                    <ExternalLink className="text-muted-foreground hover:text-primary cursor-pointer transition-colors hover-lift" size={20} />
+                  </div>
                 </div>
                 
-                <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
-                <p className="text-blue-400 text-sm font-medium mb-4">{project.company}</p>
-                <p className="text-gray-300 mb-6 leading-relaxed">{project.description}</p>
+                <div className="space-y-4 mb-6">
+                  <h3 className="text-2xl font-bold text-foreground">{project.title}</h3>
+                  <div className="flex items-center gap-4 text-sm">
+                    <span className="text-primary font-semibold">{project.company}</span>
+                    <div className="flex items-center gap-1 text-muted-foreground">
+                      <Calendar className="w-4 h-4" />
+                      <span>{project.period}</span>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">{project.description}</p>
+                </div>
                 
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-blue-400 mb-3">Key Achievements:</h4>
-                  <ul className="space-y-2">
-                    {project.achievements.map((achievement, achIndex) => (
-                      <li key={achIndex} className="flex items-start space-x-2 text-sm text-gray-300">
-                        <div className="w-1.5 h-1.5 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                        <span>{achievement}</span>
-                      </li>
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">Key Achievements:</h4>
+                    <ul className="space-y-3">
+                      {project.achievements.map((achievement, achIndex) => (
+                        <li key={achIndex} className="flex items-start space-x-3 text-sm text-muted-foreground">
+                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="leading-relaxed">{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span key={techIndex} className="skill-badge text-xs">
+                        {tech}
+                      </span>
                     ))}
-                  </ul>
-                </div>
-                
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span key={techIndex} className="px-3 py-1 glass-effect text-gray-300 text-sm rounded-full border border-gray-600 hover:border-blue-400 transition-colors">
-                      {tech}
-                    </span>
-                  ))}
+                  </div>
                 </div>
               </div>
             </div>
