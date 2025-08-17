@@ -5,22 +5,22 @@ import { Target, Award, Users, TrendingUp, Code, Shield, Zap, Globe } from 'luci
 export const About = () => {
   const highlights = [
     {
-      icon: <Code className="text-primary-foreground w-6 h-6" />,
+      icon: <Code className="text-primary w-6 h-6" />,
       title: "Technical Excellence",
       description: "12+ years mastering Java ecosystem, from legacy systems to cutting-edge microservices."
     },
     {
-      icon: <Users className="text-primary-foreground w-6 h-6" />,
+      icon: <Users className="text-accent w-6 h-6" />,
       title: "Leadership Excellence",
       description: "Leading cross-functional teams, mentoring developers, and driving technical strategies."
     },
     {
-      icon: <Shield className="text-primary-foreground w-6 h-6" />,
+      icon: <Shield className="text-primary w-6 h-6" />,
       title: "Enterprise Solutions",
       description: "Architecting robust, scalable solutions for mission-critical banking applications."
     },
     {
-      icon: <Zap className="text-primary-foreground w-6 h-6" />,
+      icon: <Zap className="text-accent w-6 h-6" />,
       title: "Performance Engineering",
       description: "Optimizing application performance and ensuring 99.9% uptime for production systems."
     }
@@ -28,19 +28,19 @@ export const About = () => {
 
   const achievements = [
     { metric: "12+", label: "Years Experience", icon: <Award className="w-5 h-5 text-primary" /> },
-    { metric: "50+", label: "Projects Delivered", icon: <Target className="w-5 h-5 text-primary" /> },
+    { metric: "50+", label: "Projects Delivered", icon: <Target className="w-5 h-5 text-accent" /> },
     { metric: "Enterprise", label: "Banking Solutions", icon: <Globe className="w-5 h-5 text-primary" /> },
-    { metric: "24/7", label: "Production Support", icon: <TrendingUp className="w-5 h-5 text-primary" /> }
+    { metric: "24/7", label: "Production Support", icon: <TrendingUp className="w-5 h-5 text-accent" /> }
   ];
 
   return (
     <section id="about" className="section-spacing bg-background">
       <div className="max-w-7xl mx-auto container-padding">
-        <div className="section-header animate-fade-in-up">
-          <h2 className="text-balance">
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="mb-6">
             About <span className="gradient-text">Rajasekhar Pallala</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Senior Lead Java Engineer with expertise in enterprise solutions and technical leadership
           </p>
         </div>
@@ -77,8 +77,8 @@ export const About = () => {
             {/* Highlights */}
             <div className="grid sm:grid-cols-2 gap-6">
               {highlights.map((highlight, index) => (
-                <div key={index} className={`executive-card p-6 hover-lift animate-scale-in stagger-${index + 1}`}>
-                  <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mb-4">
+                <div key={index} className={`glass-card p-6 hover:scale-105 transition-all duration-300 animate-scale-in stagger-${index + 1}`}>
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl flex items-center justify-center mb-4">
                     {highlight.icon}
                   </div>
                   <h4 className="font-bold text-foreground mb-2">{highlight.title}</h4>
@@ -90,17 +90,17 @@ export const About = () => {
 
           {/* Achievements */}
           <div className="space-y-8 animate-slide-in-right">
-            <div className="executive-card p-8">
+            <div className="glass-card p-8">
               <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Key Achievements</h3>
               
               <div className="grid grid-cols-2 gap-6">
                 {achievements.map((achievement, index) => (
                   <div key={index} className={`text-center space-y-3 animate-scale-in stagger-${index + 1}`}>
-                    <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto">
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center mx-auto">
                       {achievement.icon}
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-primary">{achievement.metric}</div>
+                      <div className="text-2xl font-bold gradient-text">{achievement.metric}</div>
                       <div className="text-sm text-muted-foreground font-medium">{achievement.label}</div>
                     </div>
                   </div>
@@ -109,13 +109,13 @@ export const About = () => {
             </div>
 
             {/* Certifications */}
-            <div className="executive-card p-8">
+            <div className="glass-card p-8">
               <h3 className="text-xl font-bold text-foreground mb-6">Certifications & Education</h3>
               
               <div className="space-y-4">
-                <div className="flex items-center space-x-4 p-4 bg-accent rounded-lg">
-                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-primary-foreground" />
+                <div className="flex items-center space-x-4 p-4 bg-secondary/30 rounded-lg hover:bg-secondary/50 transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+                    <Shield className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <div className="font-semibold text-foreground">AWS Solutions Architect - Associate</div>
@@ -123,9 +123,9 @@ export const About = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-4 p-4 bg-accent rounded-lg">
-                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-                    <Award className="w-6 h-6 text-primary-foreground" />
+                <div className="flex items-center space-x-4 p-4 bg-secondary/30 rounded-lg hover:bg-secondary/50 transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-lg flex items-center justify-center">
+                    <Award className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <div className="font-semibold text-foreground">Master of Computer Applications</div>

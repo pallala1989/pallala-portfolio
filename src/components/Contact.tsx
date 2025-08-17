@@ -64,7 +64,7 @@ export const Contact = () => {
       href: "tel:+19039210271"
     },
     {
-      icon: <Mail className="text-primary" size={20} />,
+      icon: <Mail className="text-accent" size={20} />,
       label: "Email", 
       value: "pallala1989@gmail.com",
       href: "mailto:pallala1989@gmail.com"
@@ -76,7 +76,7 @@ export const Contact = () => {
       href: "#"
     },
     {
-      icon: <Linkedin className="text-primary" size={20} />,
+      icon: <Linkedin className="text-accent" size={20} />,
       label: "LinkedIn",
       value: "linkedin.com/in/pallala",
       href: "https://linkedin.com/in/pallala"
@@ -84,13 +84,13 @@ export const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="section-spacing contact-section">
-      <div className="max-w-7xl mx-auto container-padding relative z-10">
-        <div className="section-header animate-fade-in-up">
-          <h2 className="font-bold mb-6 text-foreground font-serif">
+    <section id="contact" className="section-spacing bg-background/50">
+      <div className="max-w-7xl mx-auto container-padding">
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="mb-6">
             Get In <span className="gradient-text">Touch</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Ready to discuss your next project or explore opportunities? I'm always open to interesting conversations and collaborations.
           </p>
         </div>
@@ -103,17 +103,17 @@ export const Contact = () => {
                 <a
                   key={index}
                   href={info.href}
-                  className="contact-info-card animate-fade-in-up mouse-glow"
+                  className="glass-card p-6 flex items-center gap-4 hover:scale-105 transition-all duration-300 animate-fade-in-up"
                   style={{ animationDelay: `${index * 0.2}s` }}
                   target={info.href.startsWith('http') ? '_blank' : '_self'}
                   rel={info.href.startsWith('http') ? 'noopener noreferrer' : ''}
                 >
-                  <div className="contact-icon">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center">
                     {info.icon}
                   </div>
-                  <div className="overflow-hidden">
+                  <div>
                     <p className="text-muted-foreground text-sm font-medium">{info.label}</p>
-                    <p className="text-foreground font-semibold text-sm sm:text-base break-words">{info.value}</p>
+                    <p className="text-foreground font-semibold break-words">{info.value}</p>
                   </div>
                 </a>
               ))}
@@ -121,8 +121,8 @@ export const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="contact-card p-8 animate-slide-in-right mouse-glow">
-            <h3 className="text-2xl font-bold text-foreground mb-6 font-serif">Send Message</h3>
+          <div className="glass-card p-8 animate-slide-in-right">
+            <h3 className="text-2xl font-bold text-foreground mb-6">Send Message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="animate-fade-in-up stagger-1">
@@ -135,7 +135,7 @@ export const Contact = () => {
                   onChange={handleChange}
                   required
                   disabled={isLoading}
-                  className="w-full px-4 py-3 bg-input/50 border border-border rounded-xl text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all disabled:opacity-50 backdrop-blur-xl"
+                  className="w-full px-4 py-3 bg-secondary/50 border border-border rounded-xl text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all disabled:opacity-50"
                   placeholder="Your Name"
                 />
               </div>
@@ -150,7 +150,7 @@ export const Contact = () => {
                   onChange={handleChange}
                   required
                   disabled={isLoading}
-                  className="w-full px-4 py-3 bg-input/50 border border-border rounded-xl text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all disabled:opacity-50 backdrop-blur-xl"
+                  className="w-full px-4 py-3 bg-secondary/50 border border-border rounded-xl text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all disabled:opacity-50"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -165,7 +165,7 @@ export const Contact = () => {
                   required
                   disabled={isLoading}
                   rows={5}
-                  className="w-full px-4 py-3 bg-input/50 border border-border rounded-xl text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none disabled:opacity-50 backdrop-blur-xl"
+                  className="w-full px-4 py-3 bg-secondary/50 border border-border rounded-xl text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none disabled:opacity-50"
                   placeholder="Your message..."
                 />
               </div>
@@ -173,7 +173,7 @@ export const Contact = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 font-medium hover-lift animate-fade-in-up stagger-4 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-2xl hover:shadow-primary/40"
+                className="w-full px-6 py-4 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 font-semibold animate-fade-in-up stagger-4 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-2xl hover:shadow-primary/40"
               >
                 <Send size={20} className={isLoading ? 'animate-spin' : ''} />
                 <span>{isLoading ? 'Sending...' : 'Send Message'}</span>
