@@ -60,7 +60,7 @@ export const Hero = () => {
     <section id="home" className="min-h-screen hero-gradient relative overflow-hidden pt-20">
       <div className="max-w-7xl mx-auto container-padding relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-8">
-          {/* Left Column */}
+          {/* Left Content */}
           <div className="space-y-8 animate-slide-in-left">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-sm font-semibold text-primary animate-fade-in-up border border-primary/20">
@@ -77,7 +77,6 @@ export const Hero = () => {
                 Virtusa Corp - Chase Banking Solutions
               </div>
 
-              {/* Typing animation */}
               <div className="glass-card p-6 animate-fade-in-up stagger-3">
                 <div className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wider">
                   Expertise in:
@@ -94,56 +93,56 @@ export const Hero = () => {
                 cross-functional teams for mission-critical banking applications.
               </p>
 
-              {/* ✅ Contact Cards (fixed layout + links) */}
+              {/* ✅ Contact Cards (fully clickable) */}
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-6 max-w-4xl">
                 {/* Phone */}
-                <div className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2 w-full">
+                <a
+                  href="tel:+19039210271"
+                  className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2 w-full hover:shadow-lg transition-shadow duration-300"
+                  aria-label="Call phone number"
+                >
                   <Phone className="w-6 h-6 text-purple-400" />
                   <span className="text-xs uppercase text-muted-foreground">Phone</span>
-                  <a
-                    href="tel:+19039210271"
-                    className="text-sm font-semibold break-all hover:underline"
-                  >
-                    +1 903-921-0271
-                  </a>
-                </div>
+                  <span className="text-sm font-semibold break-all">+1 903-921-0271</span>
+                </a>
 
                 {/* Email */}
-                <div className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2 w-full">
+                <a
+                  href="mailto:pallala1989@gmail.com"
+                  className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2 w-full hover:shadow-lg transition-shadow duration-300"
+                  aria-label="Send email"
+                >
                   <Mail className="w-6 h-6 text-blue-400" />
                   <span className="text-xs uppercase text-muted-foreground">Email</span>
-                  <a
-                    href="mailto:pallala1989@gmail.com"
-                    className="text-sm font-semibold break-all hover:underline"
-                  >
-                    pallala1989@gmail.com
-                  </a>
-                </div>
+                  <span className="text-sm font-semibold break-all">pallala1989@gmail.com</span>
+                </a>
 
-                {/* Location */}
-                <div className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2 w-full">
+                {/* Location (not clickable) */}
+                <div
+                  className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2 w-full"
+                  aria-label="Location"
+                >
                   <MapPin className="w-6 h-6 text-pink-400" />
                   <span className="text-xs uppercase text-muted-foreground">Location</span>
                   <span className="text-sm font-semibold break-words">Wilmington, DE 19810</span>
                 </div>
 
                 {/* LinkedIn */}
-                <div className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2 w-full">
+                <a
+                  href="https://linkedin.com/in/pallala"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2 w-full hover:shadow-lg transition-shadow duration-300"
+                  aria-label="LinkedIn profile"
+                >
                   <Linkedin className="w-6 h-6 text-blue-500" />
                   <span className="text-xs uppercase text-muted-foreground">LinkedIn</span>
-                  <a
-                    href="https://linkedin.com/in/pallala"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-semibold break-all hover:underline"
-                  >
-                    linkedin.com/in/pallala
-                  </a>
-                </div>
+                  <span className="text-sm font-semibold break-all">linkedin.com/in/pallala</span>
+                </a>
               </div>
             </div>
 
-            {/* Stats Section */}
+            {/* Stats */}
             <div className="grid grid-cols-3 gap-4 py-6">
               <div className="glass-card p-6 text-center animate-scale-in stagger-4">
                 <div className="text-3xl font-bold text-primary mb-2">13+</div>
@@ -159,7 +158,7 @@ export const Hero = () => {
               </div>
             </div>
 
-            {/* Buttons */}
+            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up stagger-6">
               <button
                 onClick={() => scrollTo('skills')}
@@ -196,10 +195,16 @@ export const Hero = () => {
               <div className="absolute -top-4 -right-4 w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center animate-float border border-primary/30">
                 <Code className="w-8 h-8 text-primary" />
               </div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center animate-float border border-accent/30" style={{ animationDelay: '1s' }}>
+              <div
+                className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center animate-float border border-accent/30"
+                style={{ animationDelay: '1s' }}
+              >
                 <Zap className="w-8 h-8 text-accent" />
               </div>
-              <div className="absolute top-1/2 -left-8 w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center animate-float border border-primary/30" style={{ animationDelay: '2s' }}>
+              <div
+                className="absolute top-1/2 -left-8 w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center animate-float border border-primary/30"
+                style={{ animationDelay: '2s' }}
+              >
                 <Star className="w-6 h-6 text-primary" />
               </div>
             </div>
