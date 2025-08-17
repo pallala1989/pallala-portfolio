@@ -85,11 +85,11 @@ export const Hero = () => {
                 cross-functional teams for mission-critical banking applications.
               </p>
 
-              {/* Contact Info Cards - Vertical layout */}
-              <div className="flex flex-col sm:flex-row sm:justify-between gap-6 mt-6 max-w-md">
+              {/* Contact Info Cards – adjusted size */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-6 max-w-4xl">
                 <a
                   href="facetime:+19039210271"
-                  className="flex flex-col items-center bg-gradient-to-br from-primary/25 to-accent/30 rounded-xl p-6 shadow-lg hover:shadow-primary/40 transition-shadow duration-300 min-w-[160px]"
+                  className="flex flex-col items-center justify-center bg-gradient-to-br from-primary/25 to-accent/30 rounded-xl p-6 shadow-lg hover:shadow-primary/40 transition-shadow duration-300 min-w-[200px] max-w-[220px]"
                   target="_self"
                   rel="noopener noreferrer"
                   aria-label="Call phone number via FaceTime"
@@ -101,7 +101,7 @@ export const Hero = () => {
 
                 <a
                   href="mailto:pallala1989@gmail.com"
-                  className="flex flex-col items-center bg-gradient-to-br from-accent/25 to-primary/30 rounded-xl p-6 shadow-lg hover:shadow-accent/40 transition-shadow duration-300 min-w-[160px]"
+                  className="flex flex-col items-center justify-center bg-gradient-to-br from-accent/25 to-primary/30 rounded-xl p-6 shadow-lg hover:shadow-accent/40 transition-shadow duration-300 min-w-[200px] max-w-[220px]"
                   target="_self"
                   rel="noopener noreferrer"
                   aria-label="Send email"
@@ -112,7 +112,7 @@ export const Hero = () => {
                 </a>
 
                 <div
-                  className="flex flex-col items-center bg-gradient-to-br from-primary/25 to-accent/30 rounded-xl p-6 shadow-lg min-w-[160px]"
+                  className="flex flex-col items-center justify-center bg-gradient-to-br from-primary/25 to-accent/30 rounded-xl p-6 shadow-lg min-w-[200px] max-w-[220px]"
                   aria-label="Location"
                 >
                   <MapPin className="w-8 h-8 text-primary mb-3" />
@@ -122,7 +122,7 @@ export const Hero = () => {
 
                 <a
                   href="https://linkedin.com/in/pallala"
-                  className="flex flex-col items-center bg-gradient-to-br from-accent/25 to-primary/30 rounded-xl p-6 shadow-lg hover:shadow-accent/40 transition-shadow duration-300 min-w-[160px]"
+                  className="flex flex-col items-center justify-center bg-gradient-to-br from-accent/25 to-primary/30 rounded-xl p-6 shadow-lg hover:shadow-accent/40 transition-shadow duration-300 min-w-[200px] max-w-[220px]"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn profile"
