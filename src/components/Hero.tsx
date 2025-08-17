@@ -8,12 +8,21 @@ export const Hero = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   
   const roles = [
-    'Senior Lead Java Engineer',
-    'Enterprise Solutions Architect', 
-    'Microservices Expert',
-    'AWS Cloud Specialist',
-    'Technical Leader',
-    'Performance Engineer'
+   'Java 17+, Spring Boot 3.x, and Reactive Programming',
+  'Cloud-native Architecture and Microservices Design',
+  'AWS Cloud Services: Lambda, ECS/EKS, DynamoDB, CloudFormation, Terraform',
+  'Kubernetes: orchestration, Helm, service mesh (Istio)',
+  'Pivotal Cloud Foundry (PCF) Platform and Deployments',
+  'Performance Optimization: JVM tuning, Garbage Collection, async processing',
+  'Memory Management: Heap analysis, native memory tracking, Java profilers',
+  'Legacy Application Migration to AWS and Cloud Refactoring',
+  'Database Administration: Oracle, PostgreSQL, AWS RDS, DynamoDB, Cassandra, MongoDB',
+  'Messaging & Streaming Technologies: Kafka, RabbitMQ, AWS Kinesis',
+  'DevOps Automation: CI/CD pipelines, Infrastructure as Code, Jenkins, GitLab CI',
+  'Security & Compliance: IAM, API Gateway security, OAuth2, JWT, AWS Shield/WAF',
+  'Serverless Architectures: AWS Lambda, Step Functions, EventBridge',
+  'Observability: Distributed tracing (OpenTelemetry), ELK/EFK stacks, logging',
+  'Test Automation: JUnit 5, Cucumber, Postman, contract testing'
   ];
 
   useEffect(() => {
@@ -100,7 +109,7 @@ export const Hero = () => {
                     </div>
                     <div>
                       <div className="text-xs font-medium text-muted-foreground">Email</div>
-                      <div className="text-sm font-semibold text-foreground">pallala1989@gmail.com</div>
+                     <div className="contact-text break-all">pallala1989@gmail.com</div>
                     </div>
                   </div>
                 </div>
