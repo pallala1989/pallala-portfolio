@@ -85,51 +85,51 @@ export const Hero = () => {
                 cross-functional teams for mission-critical banking applications.
               </p>
 
-              {/* Contact Info Cards - Updated style */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-6">
+              {/* Contact Info Cards - Vertical layout */}
+              <div className="flex flex-col sm:flex-row sm:justify-between gap-6 mt-6 max-w-md">
                 <a
                   href="facetime:+19039210271"
-                  className="flex flex-col items-center justify-center bg-gradient-to-br from-primary/25 to-accent/30 rounded-xl p-6 shadow-lg hover:shadow-primary/40 transition-shadow duration-300"
+                  className="flex flex-col items-center bg-gradient-to-br from-primary/25 to-accent/30 rounded-xl p-6 shadow-lg hover:shadow-primary/40 transition-shadow duration-300 min-w-[160px]"
                   target="_self"
                   rel="noopener noreferrer"
                   aria-label="Call phone number via FaceTime"
                 >
                   <Phone className="w-8 h-8 text-primary mb-3" />
                   <p className="text-xs uppercase text-muted-foreground mb-1 tracking-widest">Phone</p>
-                  <p className="text-base font-semibold text-white">+1 903-921-0271</p>
+                  <p className="text-base font-semibold text-white text-center break-words">+1 903-921-0271</p>
                 </a>
 
                 <a
                   href="mailto:pallala1989@gmail.com"
-                  className="flex flex-col items-center justify-center bg-gradient-to-br from-accent/25 to-primary/30 rounded-xl p-6 shadow-lg hover:shadow-accent/40 transition-shadow duration-300"
+                  className="flex flex-col items-center bg-gradient-to-br from-accent/25 to-primary/30 rounded-xl p-6 shadow-lg hover:shadow-accent/40 transition-shadow duration-300 min-w-[160px]"
                   target="_self"
                   rel="noopener noreferrer"
                   aria-label="Send email"
                 >
                   <Mail className="w-8 h-8 text-accent mb-3" />
                   <p className="text-xs uppercase text-muted-foreground mb-1 tracking-widest">Email</p>
-                  <p className="text-base font-semibold text-white break-words">pallala1989@gmail.com</p>
+                  <p className="text-base font-semibold text-white text-center break-words">pallala1989@gmail.com</p>
                 </a>
 
                 <div
-                  className="flex flex-col items-center justify-center bg-gradient-to-br from-primary/25 to-accent/30 rounded-xl p-6 shadow-lg"
+                  className="flex flex-col items-center bg-gradient-to-br from-primary/25 to-accent/30 rounded-xl p-6 shadow-lg min-w-[160px]"
                   aria-label="Location"
                 >
                   <MapPin className="w-8 h-8 text-primary mb-3" />
                   <p className="text-xs uppercase text-muted-foreground mb-1 tracking-widest">Location</p>
-                  <p className="text-base font-semibold text-white text-center">Wilmington, DE 19810</p>
+                  <p className="text-base font-semibold text-white text-center break-words">Wilmington, DE 19810</p>
                 </div>
 
                 <a
                   href="https://linkedin.com/in/pallala"
-                  className="flex flex-col items-center justify-center bg-gradient-to-br from-accent/25 to-primary/30 rounded-xl p-6 shadow-lg hover:shadow-accent/40 transition-shadow duration-300"
+                  className="flex flex-col items-center bg-gradient-to-br from-accent/25 to-primary/30 rounded-xl p-6 shadow-lg hover:shadow-accent/40 transition-shadow duration-300 min-w-[160px]"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn profile"
                 >
                   <Linkedin className="w-8 h-8 text-accent mb-3" />
                   <p className="text-xs uppercase text-muted-foreground mb-1 tracking-widest">LinkedIn</p>
-                  <p className="text-base font-semibold text-white break-words">linkedin.com/in/pallala</p>
+                  <p className="text-base font-semibold text-white text-center break-words">linkedin.com/in/pallala</p>
                 </a>
               </div>
             </div>
