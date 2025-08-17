@@ -77,7 +77,7 @@ export const Hero = () => {
                 Virtusa Corp - Chase Banking Solutions
               </div>
 
-              {/* Expertise Typing */}
+              {/* Typing animation */}
               <div className="glass-card p-6 animate-fade-in-up stagger-3">
                 <div className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wider">
                   Expertise in:
@@ -94,40 +94,52 @@ export const Hero = () => {
                 cross-functional teams for mission-critical banking applications.
               </p>
 
-              {/* Contact Info (Improved Layout) */}
+              {/* ✅ Contact Cards (fixed layout + links) */}
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-6 max-w-4xl">
                 {/* Phone */}
-                <div className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2">
+                <div className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2 w-full">
                   <Phone className="w-6 h-6 text-purple-400" />
                   <span className="text-xs uppercase text-muted-foreground">Phone</span>
-                  <span className="text-sm font-semibold break-words">+1 903-921-0271</span>
+                  <a
+                    href="tel:+19039210271"
+                    className="text-sm font-semibold break-all hover:underline"
+                  >
+                    +1 903-921-0271
+                  </a>
                 </div>
 
                 {/* Email */}
-                <div className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2">
+                <div className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2 w-full">
                   <Mail className="w-6 h-6 text-blue-400" />
                   <span className="text-xs uppercase text-muted-foreground">Email</span>
-                  <span className="text-sm font-semibold break-words">pallala1989@gmail.com</span>
+                  <a
+                    href="mailto:pallala1989@gmail.com"
+                    className="text-sm font-semibold break-all hover:underline"
+                  >
+                    pallala1989@gmail.com
+                  </a>
                 </div>
 
                 {/* Location */}
-                <div className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2">
+                <div className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2 w-full">
                   <MapPin className="w-6 h-6 text-pink-400" />
                   <span className="text-xs uppercase text-muted-foreground">Location</span>
                   <span className="text-sm font-semibold break-words">Wilmington, DE 19810</span>
                 </div>
 
                 {/* LinkedIn */}
-                <a
-                  href="https://linkedin.com/in/pallala"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2 hover:bg-[#2C2C2C] transition"
-                >
+                <div className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2 w-full">
                   <Linkedin className="w-6 h-6 text-blue-500" />
                   <span className="text-xs uppercase text-muted-foreground">LinkedIn</span>
-                  <span className="text-sm font-semibold break-words">linkedin.com/in/pallala</span>
-                </a>
+                  <a
+                    href="https://linkedin.com/in/pallala"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-semibold break-all hover:underline"
+                  >
+                    linkedin.com/in/pallala
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -164,7 +176,7 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Right Column – Profile Image & Floating Icons */}
+          {/* Right Column – Profile Image & Icons */}
           <div className="relative animate-slide-in-right stagger-2 flex justify-center lg:justify-end">
             <div className="relative">
               <div className="w-80 h-80 relative">
