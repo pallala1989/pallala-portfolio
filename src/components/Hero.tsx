@@ -1,5 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowDown, MapPin, Mail, Phone, Award, Code, Zap, Star, Linkedin } from 'lucide-react';
+import {
+  ArrowDown,
+  MapPin,
+  Mail,
+  Phone,
+  Award,
+  Code,
+  Zap,
+  Star,
+  Linkedin,
+} from 'lucide-react';
 
 export const Hero = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -21,7 +31,7 @@ export const Hero = () => {
     'Security & Compliance: IAM, API Gateway security, OAuth2, JWT, AWS Shield/WAF',
     'Serverless Architectures: AWS Lambda, Step Functions, EventBridge',
     'Observability: Distributed tracing (Dynatrace), ELK/EFK stacks, logging',
-    'Test Automation: JUnit 5, Cucumber, Postman/bruno'
+    'Test Automation: JUnit 5, Cucumber, Postman/bruno',
   ];
 
   useEffect(() => {
@@ -40,9 +50,9 @@ export const Hero = () => {
     }, isDeleting ? 50 : 100);
 
     return () => clearTimeout(timeout);
-  }, [currentRoleIndex, displayText, isDeleting, roles]);
+  }, [currentRoleIndex, displayText, isDeleting]);
 
-  const scrollTo = (id) => {
+  const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -50,8 +60,7 @@ export const Hero = () => {
     <section id="home" className="min-h-screen hero-gradient relative overflow-hidden pt-20">
       <div className="max-w-7xl mx-auto container-padding relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-8">
-
-          {/* Content */}
+          {/* Left Column */}
           <div className="space-y-8 animate-slide-in-left">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-sm font-semibold text-primary animate-fade-in-up border border-primary/20">
@@ -60,15 +69,15 @@ export const Hero = () => {
               </div>
 
               <div className="space-y-4">
-                <h1 className="animate-scale-in text-white">Rajasekhar Pallala</h1>
-                <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full animate-fade-in-up stagger-1"></div>
+                <h1 className="animate-scale-in text-white text-4xl font-bold">Rajasekhar Pallala</h1>
+                <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full animate-fade-in-up stagger-1" />
               </div>
 
               <div className="text-xl text-accent font-semibold animate-fade-in-up stagger-2">
                 Virtusa Corp - Chase Banking Solutions
               </div>
 
-              {/* Animated Role Section */}
+              {/* Expertise Typing */}
               <div className="glass-card p-6 animate-fade-in-up stagger-3">
                 <div className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wider">
                   Expertise in:
@@ -85,56 +94,44 @@ export const Hero = () => {
                 cross-functional teams for mission-critical banking applications.
               </p>
 
-              {/* Contact Info Cards – adjusted size */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-6 max-w-4xl">
-                <a
-                  href="facetime:+19039210271"
-                  className="flex flex-col items-center justify-center bg-gradient-to-br from-primary/25 to-accent/30 rounded-xl p-6 shadow-lg hover:shadow-primary/40 transition-shadow duration-300 min-w-[200px] max-w-[220px]"
-                  target="_self"
-                  rel="noopener noreferrer"
-                  aria-label="Call phone number via FaceTime"
-                >
-                  <Phone className="w-8 h-8 text-primary mb-3" />
-                  <p className="text-xs uppercase text-muted-foreground mb-1 tracking-widest">Phone</p>
-                  <p className="text-base font-semibold text-white text-center break-words">+1 903-921-0271</p>
-                </a>
-
-                <a
-                  href="mailto:pallala1989@gmail.com"
-                  className="flex flex-col items-center justify-center bg-gradient-to-br from-accent/25 to-primary/30 rounded-xl p-6 shadow-lg hover:shadow-accent/40 transition-shadow duration-300 min-w-[200px] max-w-[220px]"
-                  target="_self"
-                  rel="noopener noreferrer"
-                  aria-label="Send email"
-                >
-                  <Mail className="w-8 h-8 text-accent mb-3" />
-                  <p className="text-xs uppercase text-muted-foreground mb-1 tracking-widest">Email</p>
-                  <p className="text-base font-semibold text-white text-center break-words">pallala1989@gmail.com</p>
-                </a>
-
-                <div
-                  className="flex flex-col items-center justify-center bg-gradient-to-br from-primary/25 to-accent/30 rounded-xl p-6 shadow-lg min-w-[200px] max-w-[220px]"
-                  aria-label="Location"
-                >
-                  <MapPin className="w-8 h-8 text-primary mb-3" />
-                  <p className="text-xs uppercase text-muted-foreground mb-1 tracking-widest">Location</p>
-                  <p className="text-base font-semibold text-white text-center break-words">Wilmington, DE 19810</p>
+              {/* Contact Info (Improved Layout) */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-6 max-w-4xl">
+                {/* Phone */}
+                <div className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2">
+                  <Phone className="w-6 h-6 text-purple-400" />
+                  <span className="text-xs uppercase text-muted-foreground">Phone</span>
+                  <span className="text-sm font-semibold break-words">+1 903-921-0271</span>
                 </div>
 
+                {/* Email */}
+                <div className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2">
+                  <Mail className="w-6 h-6 text-blue-400" />
+                  <span className="text-xs uppercase text-muted-foreground">Email</span>
+                  <span className="text-sm font-semibold break-words">pallala1989@gmail.com</span>
+                </div>
+
+                {/* Location */}
+                <div className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2">
+                  <MapPin className="w-6 h-6 text-pink-400" />
+                  <span className="text-xs uppercase text-muted-foreground">Location</span>
+                  <span className="text-sm font-semibold break-words">Wilmington, DE 19810</span>
+                </div>
+
+                {/* LinkedIn */}
                 <a
                   href="https://linkedin.com/in/pallala"
-                  className="flex flex-col items-center justify-center bg-gradient-to-br from-accent/25 to-primary/30 rounded-xl p-6 shadow-lg hover:shadow-accent/40 transition-shadow duration-300 min-w-[200px] max-w-[220px]"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="LinkedIn profile"
+                  className="flex flex-col items-start bg-[#1A1A1A] rounded-xl p-4 text-white shadow-md gap-2 hover:bg-[#2C2C2C] transition"
                 >
-                  <Linkedin className="w-8 h-8 text-accent mb-3" />
-                  <p className="text-xs uppercase text-muted-foreground mb-1 tracking-widest">LinkedIn</p>
-                  <p className="text-base font-semibold text-white text-center break-words">linkedin.com/in/pallala</p>
+                  <Linkedin className="w-6 h-6 text-blue-500" />
+                  <span className="text-xs uppercase text-muted-foreground">LinkedIn</span>
+                  <span className="text-sm font-semibold break-words">linkedin.com/in/pallala</span>
                 </a>
               </div>
             </div>
 
-            {/* Stats */}
+            {/* Stats Section */}
             <div className="grid grid-cols-3 gap-4 py-6">
               <div className="glass-card p-6 text-center animate-scale-in stagger-4">
                 <div className="text-3xl font-bold text-primary mb-2">13+</div>
@@ -150,7 +147,7 @@ export const Hero = () => {
               </div>
             </div>
 
-            {/* Action Buttons */}
+            {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up stagger-6">
               <button
                 onClick={() => scrollTo('skills')}
@@ -167,11 +164,11 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Professional Image */}
+          {/* Right Column – Profile Image & Floating Icons */}
           <div className="relative animate-slide-in-right stagger-2 flex justify-center lg:justify-end">
             <div className="relative">
               <div className="w-80 h-80 relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/10 to-primary/20 rounded-3xl animate-float"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/10 to-primary/20 rounded-3xl animate-float" />
                 <div className="relative z-10 w-full h-full p-4">
                   <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl border-2 border-primary/20">
                     <img
@@ -183,27 +180,21 @@ export const Hero = () => {
                 </div>
               </div>
 
-              {/* Floating Elements */}
+              {/* Floating Icons */}
               <div className="absolute -top-4 -right-4 w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center animate-float border border-primary/30">
                 <Code className="w-8 h-8 text-primary" />
               </div>
-              <div
-                className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center animate-float border border-accent/30"
-                style={{ animationDelay: '1s' }}
-              >
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center animate-float border border-accent/30" style={{ animationDelay: '1s' }}>
                 <Zap className="w-8 h-8 text-accent" />
               </div>
-              <div
-                className="absolute top-1/2 -left-8 w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center animate-float border border-primary/30"
-                style={{ animationDelay: '2s' }}
-              >
+              <div className="absolute top-1/2 -left-8 w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center animate-float border border-primary/30" style={{ animationDelay: '2s' }}>
                 <Star className="w-6 h-6 text-primary" />
               </div>
             </div>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Arrow */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-fade-in-up">
           <button
             onClick={() => scrollTo('skills')}
