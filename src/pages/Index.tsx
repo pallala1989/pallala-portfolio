@@ -8,13 +8,10 @@ import { Projects } from '@/components/Projects';
 import { Services } from '@/components/Services';
 import { Contact } from '@/components/Contact';
 import { Navigation } from '@/components/Navigation';
-import { NeuralBackground } from '@/components/NeuralBackground';
-import { LinkedInBadge } from '@/components/LinkedInBadge';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground relative">
-      <NeuralBackground />
+    <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       <Hero />
       <Skills />
@@ -23,7 +20,6 @@ const Index = () => {
       <Projects />
       <Services />
       <Contact />
-      <LinkedInBadge />
     </div>
   );
 };

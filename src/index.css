@@ -10,35 +10,35 @@
 @layer base {
   :root {
     /* Modern Dark Theme */
-    --background: 222 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 220 26% 8%;
+    --foreground: 220 13% 91%;
 
-    --card: 222 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 26% 12%;
+    --card-foreground: 220 13% 91%;
 
-    --popover: 222 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 26% 12%;
+    --popover-foreground: 220 13% 91%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222 84% 4.9%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 220 26% 8%;
 
-    --secondary: 217 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 26% 18%;
+    --secondary-foreground: 220 13% 91%;
 
-    --muted: 217 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 26% 15%;
+    --muted-foreground: 220 13% 65%;
 
-    --accent: 217 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 200 98% 39%;
+    --accent-foreground: 220 26% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 26% 8%;
 
-    --border: 217 32.6% 17.5%;
-    --input: 217 32.6% 17.5%;
-    --ring: 212 72% 59%;
+    --border: 220 26% 20%;
+    --input: 220 26% 15%;
+    --ring: 262 83% 58%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 }
 
@@ -48,35 +48,45 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.6;
     overflow-x: hidden;
   }
 
-  /* Neural Network Background */
-  #neural-background {
+  body::before {
+    content: '';
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
+    background: 
+      radial-gradient(ellipse 80% 80% at 50% -20%, rgba(120, 119, 198, 0.3) 0%, transparent 70%),
+      radial-gradient(ellipse 80% 80% at 80% 120%, rgba(66, 165, 245, 0.2) 0%, transparent 70%);
     z-index: -1;
     pointer-events: none;
   }
 
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
     font-family: 'Space Grotesk', sans-serif;
+    background: linear-gradient(135deg, hsl(var(--foreground)) 0%, hsl(var(--primary)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
     font-family: 'Space Grotesk', sans-serif;
+    color: hsl(var(--foreground));
   }
 
   h3 {
-    @apply text-xl md:text-2xl font-semibold tracking-tight text-foreground;
+    @apply text-xl md:text-2xl font-semibold tracking-tight;
     font-family: 'Space Grotesk', sans-serif;
+    color: hsl(var(--foreground));
   }
 
   p {
@@ -88,23 +98,23 @@
 @layer components {
   .glass-card {
     @apply bg-card/80 border border-border/50 rounded-2xl backdrop-blur-xl shadow-2xl;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: linear-gradient(145deg, hsl(var(--card) / 0.8), hsl(var(--card) / 0.4));
+    border: 1px solid hsl(var(--border) / 0.5);
     box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.3),
+      0 8px 32px rgba(0, 0, 0, 0.4),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .glass-card:hover {
     transform: translateY(-4px);
     box-shadow: 
-      0 16px 48px rgba(0, 0, 0, 0.4),
-      0 0 0 1px rgba(59, 130, 246, 0.3),
+      0 16px 48px rgba(0, 0, 0, 0.6),
+      0 0 0 1px hsl(var(--primary) / 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.15);
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -114,7 +124,7 @@
     background: linear-gradient(135deg, 
       hsl(var(--background)) 0%, 
       hsl(var(--background) / 0.8) 50%, 
-      rgba(59, 130, 246, 0.1) 100%);
+      hsl(var(--primary) / 0.1) 100%);
   }
 
   .section-spacing {
@@ -144,17 +154,6 @@
 
   .nav-link.active {
     @apply text-primary bg-primary/10;
-  }
-
-  /* Contact info responsive text */
-  .contact-text {
-    @apply text-sm font-semibold text-foreground break-all;
-  }
-
-  @media (max-width: 640px) {
-    .contact-text {
-      @apply text-xs;
-    }
   }
 }
 
@@ -212,15 +211,6 @@
   }
 }
 
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out forwards;
 }
@@ -239,10 +229,6 @@
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
-}
-
-.animate-pulse-custom {
-  animation: pulse 2s ease-in-out infinite;
 }
 
 /* Stagger delays */
