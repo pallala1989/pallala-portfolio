@@ -8,21 +8,20 @@ export const Hero = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   
   const roles = [
-   'Java 17+, Spring Boot 3.x, and Reactive Programming',
+   'Java 17+', 'Spring Boot 3.x, and Reactive Programming',
   'Cloud-native Architecture and Microservices Design',
-  'AWS Cloud Services: Lambda, ECS/EKS, DynamoDB, CloudFormation, Terraform',
+  'AWS Services:Lambda,EC2,S3,ECS/EKS,DynamoDB,CloudFormation,Terraform',
   'Kubernetes: orchestration, Helm, service mesh (Istio)',
-  'Pivotal Cloud Foundry (PCF) Platform and Deployments',
+  'Pivotal Cloud Foundry (PCF)',
   'Performance Optimization: JVM tuning, Garbage Collection, async processing',
   'Memory Management: Heap analysis, native memory tracking, Java profilers',
   'Legacy Application Migration to AWS and Cloud Refactoring',
-  'Database Administration: Oracle, PostgreSQL, AWS RDS, DynamoDB, Cassandra, MongoDB',
   'Messaging & Streaming Technologies: Kafka, RabbitMQ, AWS Kinesis',
-  'DevOps Automation: CI/CD pipelines, Infrastructure as Code, Jenkins, GitLab CI',
+  'DevOps Automation: CI/CD , Infrastructure as Code, Jenkins, GitLab',
   'Security & Compliance: IAM, API Gateway security, OAuth2, JWT, AWS Shield/WAF',
   'Serverless Architectures: AWS Lambda, Step Functions, EventBridge',
-  'Observability: Distributed tracing (OpenTelemetry), ELK/EFK stacks, logging',
-  'Test Automation: JUnit 5, Cucumber, Postman, contract testing'
+  'Observability: Distributed tracing (Dynatrace), ELK/EFK stacks, logging',
+  'Test Automation: JUnit 5, Cucumber, Postman/bruno'
   ];
 
   useEffect(() => {
@@ -121,7 +120,8 @@ export const Hero = () => {
                     </div>
                     <div>
                       <div className="text-xs font-medium text-muted-foreground">Phone</div>
-                      <div className="text-sm font-semibold text-foreground">903-921-0271</div>
+                      <div className="text-sm font-semibold text-foreground" >
+                        <a href="tel:+19039210271" class="glass-card p-6 flex items-center gap-4 hover:scale-105 transition-all duration-300 animate-fade-in-up" target="_self" rel="" style="animation-delay: 0s;">903-921-0271
                     </div>
                   </div>
                 </div>
@@ -131,7 +131,7 @@ export const Hero = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 py-6">
               <div className="glass-card p-6 text-center animate-scale-in stagger-4">
-                <div className="text-3xl font-bold text-primary mb-2">12+</div>
+                <div className="text-3xl font-bold text-primary mb-2">13+</div>
                 <div className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Years Experience</div>
               </div>
               <div className="glass-card p-6 text-center animate-scale-in stagger-5">
