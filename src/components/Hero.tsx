@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowDown, MapPin, Mail, Phone, Award, Code, Zap, Star } from 'lucide-react';
+import { ArrowDown, MapPin, Mail, Phone, Award, Code, Zap, Star, Linkedin } from 'lucide-react';
 
 export const Hero = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -60,7 +60,7 @@ export const Hero = () => {
               </div>
 
               <div className="space-y-4">
-                <h1 className="animate-scale-in">Rajasekhar Pallala</h1>
+                <h1 className="animate-scale-in text-white">Rajasekhar Pallala</h1>
                 <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full animate-fade-in-up stagger-1"></div>
               </div>
 
@@ -85,64 +85,51 @@ export const Hero = () => {
                 cross-functional teams for mission-critical banking applications.
               </p>
 
-              {/* Contact Info Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 animate-fade-in-up stagger-5">
+              {/* Contact Info Cards - Updated style */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-6">
                 <a
                   href="facetime:+19039210271"
-                  className="glass-card p-6 flex items-center gap-4 hover:scale-105 transition-all duration-300 animate-fade-in-up"
+                  className="flex flex-col items-center justify-center bg-gradient-to-br from-primary/25 to-accent/30 rounded-xl p-6 shadow-lg hover:shadow-primary/40 transition-shadow duration-300"
                   target="_self"
-                  rel=""
-                  style={{ animationDelay: '0s' }}
+                  rel="noopener noreferrer"
+                  aria-label="Call phone number via FaceTime"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-muted-foreground text-sm font-medium">Phone</p>
-                    <p className="text-foreground font-semibold break-words">+1 903-921-0271</p>
-                  </div>
+                  <Phone className="w-8 h-8 text-primary mb-3" />
+                  <p className="text-xs uppercase text-muted-foreground mb-1 tracking-widest">Phone</p>
+                  <p className="text-base font-semibold text-white">+1 903-921-0271</p>
                 </a>
 
                 <a
                   href="mailto:pallala1989@gmail.com"
-                  className="glass-card p-6 flex items-center gap-4 hover:scale-105 transition-all duration-300 animate-fade-in-up"
+                  className="flex flex-col items-center justify-center bg-gradient-to-br from-accent/25 to-primary/30 rounded-xl p-6 shadow-lg hover:shadow-accent/40 transition-shadow duration-300"
                   target="_self"
-                  rel=""
-                  style={{ animationDelay: '0.2s' }}
+                  rel="noopener noreferrer"
+                  aria-label="Send email"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-accent" />
-                  </div>
-                  <div>
-                    <p className="text-muted-foreground text-sm font-medium">Email</p>
-                    <p className="text-foreground font-semibold break-words">pallala1989@gmail.com</p>
-                  </div>
+                  <Mail className="w-8 h-8 text-accent mb-3" />
+                  <p className="text-xs uppercase text-muted-foreground mb-1 tracking-widest">Email</p>
+                  <p className="text-base font-semibold text-white break-words">pallala1989@gmail.com</p>
                 </a>
 
-                <div className="glass-card p-6 flex items-center gap-4 hover:scale-105 transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-muted-foreground text-sm font-medium">Location</p>
-                    <p className="text-foreground font-semibold break-words">Wilmington, DE 19810</p>
-                  </div>
+                <div
+                  className="flex flex-col items-center justify-center bg-gradient-to-br from-primary/25 to-accent/30 rounded-xl p-6 shadow-lg"
+                  aria-label="Location"
+                >
+                  <MapPin className="w-8 h-8 text-primary mb-3" />
+                  <p className="text-xs uppercase text-muted-foreground mb-1 tracking-widest">Location</p>
+                  <p className="text-base font-semibold text-white text-center">Wilmington, DE 19810</p>
                 </div>
 
                 <a
                   href="https://linkedin.com/in/pallala"
-                  className="glass-card p-6 flex items-center gap-4 hover:scale-105 transition-all duration-300 animate-fade-in-up"
+                  className="flex flex-col items-center justify-center bg-gradient-to-br from-accent/25 to-primary/30 rounded-xl p-6 shadow-lg hover:shadow-accent/40 transition-shadow duration-300"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ animationDelay: '0.6s' }}
+                  aria-label="LinkedIn profile"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center">
-                    <Star className="w-5 h-5 text-accent" />
-                  </div>
-                  <div>
-                    <p className="text-muted-foreground text-sm font-medium">LinkedIn</p>
-                    <p className="text-foreground font-semibold break-words">linkedin.com/in/pallala</p>
-                  </div>
+                  <Linkedin className="w-8 h-8 text-accent mb-3" />
+                  <p className="text-xs uppercase text-muted-foreground mb-1 tracking-widest">LinkedIn</p>
+                  <p className="text-base font-semibold text-white break-words">linkedin.com/in/pallala</p>
                 </a>
               </div>
             </div>
