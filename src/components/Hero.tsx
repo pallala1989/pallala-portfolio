@@ -79,40 +79,40 @@ export const Hero = () => {
                 cross-functional teams for mission-critical banking applications.
               </p>
 
-              {/* Contact Info Cards */}
+              {/* Contact Info Cards - Fixed overflow */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 animate-fade-in-up stagger-5">
                 <div className="glass-card p-4 hover:scale-105 transition-all duration-300">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                    <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-5 h-5 text-primary" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <div className="text-xs font-medium text-muted-foreground">Location</div>
-                      <div className="text-sm font-semibold text-foreground">Wilmington, DE</div>
+                      <div className="contact-text truncate">Wilmington, DE</div>
                     </div>
                   </div>
                 </div>
                 
                 <div className="glass-card p-4 hover:scale-105 transition-all duration-300">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center">
+                    <div className="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Mail className="w-5 h-5 text-accent" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <div className="text-xs font-medium text-muted-foreground">Email</div>
-                      <div className="text-sm font-semibold text-foreground">pallala1989@gmail.com</div>
+                      <div className="contact-text break-all">pallala1989@gmail.com</div>
                     </div>
                   </div>
                 </div>
                 
                 <div className="glass-card p-4 hover:scale-105 transition-all duration-300">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                    <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Phone className="w-5 h-5 text-primary" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <div className="text-xs font-medium text-muted-foreground">Phone</div>
-                      <div className="text-sm font-semibold text-foreground">903-921-0271</div>
+                      <div className="contact-text">903-921-0271</div>
                     </div>
                   </div>
                 </div>
