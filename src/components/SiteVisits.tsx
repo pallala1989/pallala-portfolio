@@ -50,7 +50,7 @@ const SiteVisits = () => {
     if (count >= 1000000) {
       return (count / 1000000).toFixed(1) + 'M';
     } else if (count >= 1000) {
-      return (count / 1000).toFixed(1) + 'K';
+      return (count );
     }
     return count.toString().padStart(6, '0'); // Pad with zeros for digital counter effect
   };
