@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { Eye } from 'lucide-react';
 
 const SiteVisits = () => {
-  const [displayCount, setDisplayCount] = useState(2000);
-  const [targetCount, setTargetCount] = useState(2000);
+  const [displayCount, setDisplayCount] = useState(5632);
+  const [targetCount, setTargetCount] = useState(5632);
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
@@ -28,9 +28,9 @@ const SiteVisits = () => {
       }, 500);
     } else {
       // First visit, set default count
-      setDisplayCount(2000);
-      setTargetCount(2000);
-      localStorage.setItem('siteVisits', '2000');
+      setDisplayCount(5632);
+      setTargetCount(5632);
+      localStorage.setItem('siteVisits', '5632');
     }
   }, []);
 
