@@ -1,26 +1,18 @@
-# Welcome to your Lovable project
+## Demo
 
-## Project info
+**Demo is available at:** [https://pallala1989.github.io/pallala-portfolio/](https://pallala1989.github.io/pallala-portfolio/)
 
-**URL**: https://lovable.dev/projects/fe7db9c5-a39f-472b-b520-45787ada4404
+## Project Info
+
+This project is a modern React-based web application designed to showcase a personal portfolio with responsive design and optimized performance.
 
 ## How can I edit this code?
 
-There are several ways of editing your application.
+There are several ways to work with and modify this project.
 
-**Use Lovable**
+### **Use your preferred IDE**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/fe7db9c5-a39f-472b-b520-45787ada4404) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+If you want to work locally using your own IDE (such as VS Code, WebStorm, or IntelliJ IDEA), follow these steps:
 
 ```sh
 # Step 1: Clone the repository using the project's Git URL.
@@ -30,19 +22,19 @@ git clone <YOUR_GIT_URL>
 cd <YOUR_PROJECT_NAME>
 
 # Step 3: Install the necessary dependencies.
-npm i
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server with auto-reloading and instant preview.
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### **Edit a file directly in GitHub**
 
 - Navigate to the desired file(s).
 - Click the "Edit" button (pencil icon) at the top right of the file view.
 - Make your changes and commit the changes.
 
-**Use GitHub Codespaces**
+### **Use GitHub Codespaces**
 
 - Navigate to the main page of your repository.
 - Click on the "Code" button (green button) near the top right.
@@ -62,12 +54,26 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/fe7db9c5-a39f-472b-b520-45787ada4404) and click on Share -> Publish.
+You can deploy this project easily using GitHub Pages or any static hosting platform.
 
-## Can I connect a custom domain to my Lovable project?
+### To deploy on GitHub Pages:
+
+1. Ensure your `vite.config.js` file contains the correct base path, e.g., `base: '/pallala-portfolio/'`.
+2. Run the build command:
+   ```sh
+   npm run build
+   ```
+3. Push the contents of the `dist` folder to the `gh-pages` branch.
+4. Enable GitHub Pages in your repository settings.
+
+## Can I connect a custom domain to my project?
 
 Yes, you can!
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+To connect a domain, navigate to your repository settings on GitHub > Pages > Custom domain and click **Add a custom domain**.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Follow GitHub’s documentation for detailed steps: [Using a custom domain with GitHub Pages](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
+
+## License
+
+This project is open source 
